@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="CardGames.CardGames_UCs.TitleScreenUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CardGames.CardGames_UCs"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Image HorizontalAlignment="Left" Source="/Resources/back_cards-07.png" Height="306" Margin="333,94,0,0" VerticalAlignment="Top" Width="600"/>
+        <Label Name="lbTitle" Content="Card Games" FontSize="122" HorizontalAlignment="Left" Margin="212,136,0,0" VerticalAlignment="Top" Height="220" Width="856" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo"/>
+        <Button Name="btnStart" Content="Start" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="487,574,0,0" VerticalAlignment="Top" Width="218" Height="75" Click="Start_Click" Background="#4c7f7f" />
+        <Button Name="btnHelp" Content="?" HorizontalAlignment="Left" FontFamily="SimSun" FontSize="28" Margin="729,574,0,0" VerticalAlignment="Top" Width="83" Height="75" Click="Help_Click" Background="#4c7f7f"/>
+        <Button Name="btnBlackjack" Content="Blackjack" FontSize="24" HorizontalAlignment="Left" Margin="195,460,0,0" VerticalAlignment="Top" Width="204" Height="68" FontFamily="SimSun" Background="#4c7f7f"/>
+        <Button Name="btnPoker" Content="Poker" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="423,460,0,0" VerticalAlignment="Top" Width="204" Height="68" Background="#4c7f7f"/>
+        <Button Name="btnGoFish" Content="Go Fish" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="650,460,0,0" VerticalAlignment="Top" Width="205" Height="68" Background="#4c7f7f"/>
+        <Button Name="btnWar" Content="War" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="881,460,0,0" VerticalAlignment="Top" Width="204" Height="68" RenderTransformOrigin="1.49,1.106" Background="#4c7f7f"/>
+
+
+    </Grid>
+</UserControl>

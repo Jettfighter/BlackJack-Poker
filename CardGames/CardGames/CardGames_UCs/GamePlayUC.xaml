@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="CardGames.CardGames_UCs.GamePlayUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CardGames.CardGames_UCs"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Button x:Name="btnMainMenu" Content="Main Menu" FontFamily="SimSun" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" Height="61" FontSize="32" Margin="668,607,0,0" RenderTransformOrigin="3.004,5.111" Click="MainMenu_Click" Background="#4c7f7f"/>
+        <Button x:Name="btnPlayAgain" Content="New Game" FontFamily="SimSun" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" Height="61" FontSize="32" Margin="944,607,0,0" RenderTransformOrigin="3.004,5.111" Click="PlayAgain_Click" Background="#4c7f7f"/>
+        <UniformGrid Name="ugCardArea" Margin="10,0,10,123"/>
+        <Label Name="lbPlayerLabel" Content="Player 1's turn." FontSize="40" FontFamily="SimSun" HorizontalAlignment="Left" Margin="92,607,0,0" VerticalAlignment="Top" Height="70" Width="338" />
+
+    </Grid>
+</UserControl>
