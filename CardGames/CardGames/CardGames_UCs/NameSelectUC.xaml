@@ -20,6 +20,5 @@
         <TextBox Name="tbxP5_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,457,0,0" TextWrapping="Wrap" Text="Player 5" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
         <Button Name="btnBack" Content="Back" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="444,581,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="MainMenu_Click" Background="#4c7f7f"/>
         <Button Name="btnGo" Content="Go" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="665,581,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="Go_Click" Background="#4c7f7f"/>
-
     </Grid>
 </UserControl>

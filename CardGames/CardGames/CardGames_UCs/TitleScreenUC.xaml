@@ -15,7 +15,5 @@
         <Button Name="btnPoker" Content="Poker" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="423,460,0,0" VerticalAlignment="Top" Width="204" Height="68" Background="#4c7f7f"/>
         <Button Name="btnGoFish" Content="Go Fish" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="650,460,0,0" VerticalAlignment="Top" Width="205" Height="68" Background="#4c7f7f"/>
         <Button Name="btnWar" Content="War" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="881,460,0,0" VerticalAlignment="Top" Width="204" Height="68" RenderTransformOrigin="1.49,1.106" Background="#4c7f7f"/>
-
-
     </Grid>
 </UserControl>

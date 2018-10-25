@@ -13,6 +13,5 @@
         <Label Content="Would You Like To Play Again?" FontFamily="SimSun" FontSize="32" HorizontalAlignment="Left" Margin="400,475,0,0" VerticalAlignment="Top" Width="489" Height="60"/>
         <Button Name="btn_PlayYes" Content="Yes" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="454,575,0,0" VerticalAlignment="Top" Width="180" Height="56" Background="#4c7f7f"/>
         <Button Name="btn_PlayNo" Content="No" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="640,575,0,0" VerticalAlignment="Top" Width="180" Height="56" Background="#4c7f7f"/>
-
     </Grid>
 </UserControl>
