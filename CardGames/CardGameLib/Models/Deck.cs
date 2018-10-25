@@ -11,7 +11,7 @@ namespace CardGameLib.Models
         private List<Card> CardsInDeck { get; set; }
         private List<Card> CardsPlayed { get; set; }
 
-        Deck()
+        public Deck()
         {
             string suit = "";
             for (int i = 0; i < 4; i++)
