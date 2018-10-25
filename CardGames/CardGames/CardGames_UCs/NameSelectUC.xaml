@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="CardGames.CardGames_UCs.NameSelectUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CardGames.CardGames_UCs"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Label Name="lbGameMode" Content="" HorizontalAlignment="Left" Margin="430,78,0,0" VerticalAlignment="Top" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" FontSize="45" Height="81" Width="476"/>
+        <Label Name="lbP1_Name" Content="Player 1 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,209,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
+        <TextBox Name="tbxP1_Name" HorizontalAlignment="Left" Height="57" FontFamily="SimSun" FontSize="24" Margin="624,209,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
+        <Label x:Name="lbP2_Name" Content="Player 2 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,271,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
+        <TextBox Name="tbxP2_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,271,0,0" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
+        <Label x:Name="lbP3_Name" Content="Player 3 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,333,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
+        <TextBox Name="tbxP3_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,333,0,0" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
+        <Label x:Name="lbP4_Name" Content="Player 4 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,395,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
+        <TextBox Name="tbxP4_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,395,0,0" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
+        <Label x:Name="lbP5_Name" Content="Player 5 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,457,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
+        <TextBox Name="tbxP5_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,457,0,0" TextWrapping="Wrap" Text="Player 5" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
+        <Button Name="btnBack" Content="Back" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="444,581,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="MainMenu_Click" Background="#4c7f7f"/>
+        <Button Name="btnGo" Content="Go" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="665,581,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="Go_Click" Background="#4c7f7f"/>
+    </Grid>
+</UserControl>

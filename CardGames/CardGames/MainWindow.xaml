@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGames"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" ResizeMode="NoResize" Height="720" Width="1280" Background="DarkSlateGray">
+    <Grid Name="mainWindow">
     </Grid>
 </Window>

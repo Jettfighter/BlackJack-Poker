@@ -55,6 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CardGames_UCs\GameOverUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardGames_UCs\GamePlayUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardGames_UCs\NameSelectUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardGames_UCs\TitleScreenUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +78,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CardGames_UCs\GameOverUC.xaml.cs">
+      <DependentUpon>GameOverUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CardGames_UCs\GamePlayUC.xaml.cs">
+      <DependentUpon>GamePlayUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CardGames_UCs\NameSelectUC.xaml.cs">
+      <DependentUpon>NameSelectUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CardGames_UCs\TitleScreenUC.xaml.cs">
+      <DependentUpon>TitleScreenUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -90,9 +118,80 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\roland-huse-design_poker-in-october-demo\PokerInOctober-Demo.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\roland-huse-design_poker-in-october-demo\PokerInOctober-Demo.png" />
+    <Resource Include="Resources\roland-huse-design_poker-in-october-demo\README-PokerInOctoberDemo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\10C.png" />
+    <Resource Include="Resources\10D.png" />
+    <Resource Include="Resources\10H.png" />
+    <Resource Include="Resources\10S.png" />
+    <Resource Include="Resources\2C.png" />
+    <Resource Include="Resources\2D.png" />
+    <Resource Include="Resources\2H.png" />
+    <Resource Include="Resources\2S.png" />
+    <Resource Include="Resources\3C.png" />
+    <Resource Include="Resources\3D.png" />
+    <Resource Include="Resources\3H.png" />
+    <Resource Include="Resources\3S.png" />
+    <Resource Include="Resources\4C.png" />
+    <Resource Include="Resources\4D.png" />
+    <Resource Include="Resources\4H.png" />
+    <Resource Include="Resources\4S.png" />
+    <Resource Include="Resources\5C.png" />
+    <Resource Include="Resources\5D.png" />
+    <Resource Include="Resources\5H.png" />
+    <Resource Include="Resources\5S.png" />
+    <Resource Include="Resources\6C.png" />
+    <Resource Include="Resources\6D.png" />
+    <Resource Include="Resources\6H.png" />
+    <Resource Include="Resources\6S.png" />
+    <Resource Include="Resources\7C.png" />
+    <Resource Include="Resources\7D.png" />
+    <Resource Include="Resources\7H.png" />
+    <Resource Include="Resources\7S.png" />
+    <Resource Include="Resources\8C.png" />
+    <Resource Include="Resources\8D.png" />
+    <Resource Include="Resources\8H.png" />
+    <Resource Include="Resources\8S.png" />
+    <Resource Include="Resources\9C.png" />
+    <Resource Include="Resources\9D.png" />
+    <Resource Include="Resources\9H.png" />
+    <Resource Include="Resources\9S.png" />
+    <Resource Include="Resources\AC.png" />
+    <Resource Include="Resources\aces.png" />
+    <Resource Include="Resources\AD.png" />
+    <Resource Include="Resources\AH.png" />
+    <Resource Include="Resources\AS.png" />
+    <Resource Include="Resources\back_cards-07.png" />
+    <Resource Include="Resources\blue_back.png" />
+    <Resource Include="Resources\gray_back.png" />
+    <Resource Include="Resources\green_back.png" />
+    <Resource Include="Resources\honors_spade-14.png" />
+    <Resource Include="Resources\honor_clubs.png" />
+    <Resource Include="Resources\honor_diamond.png" />
+    <Resource Include="Resources\honor_heart-14.png" />
+    <Resource Include="Resources\JC.png" />
+    <Resource Include="Resources\JD.png" />
+    <Resource Include="Resources\JH.png" />
+    <Resource Include="Resources\JS.png" />
+    <Resource Include="Resources\KC.png" />
+    <Resource Include="Resources\KD.png" />
+    <Resource Include="Resources\KH.png" />
+    <Resource Include="Resources\KS.png" />
+    <Resource Include="Resources\purple_back.png" />
+    <Resource Include="Resources\QC.png" />
+    <Resource Include="Resources\QD.png" />
+    <Resource Include="Resources\QH.png" />
+    <Resource Include="Resources\QS.png" />
+    <Resource Include="Resources\red_back.png" />
+    <Resource Include="Resources\yellow_back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
