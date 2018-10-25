@@ -63,7 +63,7 @@ namespace CardGames
         internal void Go()
         {
             TextBox[] p = new TextBox[5];
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 p[i] = (TextBox)nameSelect.spPlayers.FindName($"tbxP{i + 1}Name");
             }   
