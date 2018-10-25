@@ -77,5 +77,14 @@ namespace CardGames
             nameSelect.Visibility = Visibility.Hidden;
             gamePlay.Visibility = Visibility.Visible;
         }
+
+        //Displays the winner when the game ends.
+        //internal void GameOver(Player currentPlayer)
+        internal void GameOver()
+        {
+            gamePlay.Visibility = Visibility.Hidden;
+            gameOver.Visibility = Visibility.Visible;
+            //gameOver.lb_Winner.Content = $"{currentPlayer.Name} wins!";
+        }
     }
 }
