@@ -7,18 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <Grid>
-        <Label Name="lbGameMode" Content="" HorizontalAlignment="Left" Margin="430,78,0,0" VerticalAlignment="Top" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" FontSize="45" Height="81" Width="476"/>
-        <Label Name="lbP1_Name" Content="Player 1 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,209,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
-        <TextBox Name="tbxP1_Name" HorizontalAlignment="Left" Height="57" FontFamily="SimSun" FontSize="24" Margin="624,209,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
-        <Label x:Name="lbP2_Name" Content="Player 2 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,271,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
-        <TextBox Name="tbxP2_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,271,0,0" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
-        <Label x:Name="lbP3_Name" Content="Player 3 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,333,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
-        <TextBox Name="tbxP3_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,333,0,0" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
-        <Label x:Name="lbP4_Name" Content="Player 4 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,395,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
-        <TextBox Name="tbxP4_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,395,0,0" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
-        <Label x:Name="lbP5_Name" Content="Player 5 Name:" FontSize="30" FontFamily="SimSun" HorizontalAlignment="Left" Margin="379,457,0,0" VerticalAlignment="Top" Width="218" Height="57"/>
-        <TextBox Name="tbxP5_Name" HorizontalAlignment="Left" Height="57" FontSize="24" FontFamily="SimSun" Margin="624,457,0,0" TextWrapping="Wrap" Text="Player 5" VerticalAlignment="Top" Width="325" Background="#4c7f7f"/>
-        <Button Name="btnBack" Content="Back" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="444,581,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="MainMenu_Click" Background="#4c7f7f"/>
-        <Button Name="btnGo" Content="Go" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="665,581,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="Go_Click" Background="#4c7f7f"/>
+        <Label Name="lbGameMode" Content="" HorizontalAlignment="Left" Margin="377,57,0,0" VerticalAlignment="Top" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" FontSize="72" Height="99" Width="582"/>
+        <Button Name="btnBack" Content="Back" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="455,605,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="MainMenu_Click" Background="#4c7f7f"/>
+        <Button Name="btnGo" Content="Go" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="676,605,0,0" VerticalAlignment="Top" Width="198" Height="56" Click="Go_Click" Background="#4c7f7f"/>
+        <Grid Name="spPlayers" Margin="359,274,288,160">
+            <StackPanel x:Name="spTextboxes" Margin="284,0,20,0">
+            </StackPanel>
+            <StackPanel x:Name="spLabels" Margin="0,0,400,0" RenderTransformOrigin="0.69,0.822">
+            </StackPanel>
+        </Grid>
+        <Label Content="Number of Players:" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="377,201,0,0" VerticalAlignment="Top" Width="239" Height="45"/>
+        <Slider x:Name="sNumPlay" HorizontalAlignment="Left" TickFrequency="1" IsSnapToTickEnabled="True" Value="2" Margin="621,201,0,0" VerticalAlignment="Top" Height="45" Width="241" TickPlacement="BottomRight" Maximum="5" Minimum="1" ValueChanged="NumberOfPlayers_Slider"/>
+        <TextBox Text="{Binding Value, ElementName=sNumPlay, Mode=TwoWay}" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Height="45" Margin="867,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Background="#4c7f7f"/>
     </Grid>
 </UserControl>

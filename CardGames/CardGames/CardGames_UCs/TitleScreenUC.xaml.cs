@@ -36,5 +36,25 @@ namespace CardGames.CardGames_UCs
         {
             // Null
         }
+
+        private void Blackjack_Click(object sender, RoutedEventArgs e)
+        {
+            //
+        }
+
+        private void Poker_Click(object sender, RoutedEventArgs e)
+        {
+            //
+        }
+
+        private void GoFish_Click(object sender, RoutedEventArgs e)
+        {
+            //
+        }
+
+        private void War_Click(object sender, RoutedEventArgs e)
+        {
+            //
+        }
     }
 }

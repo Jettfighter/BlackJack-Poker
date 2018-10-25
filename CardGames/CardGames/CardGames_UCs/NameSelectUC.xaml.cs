@@ -36,5 +36,31 @@ namespace CardGames.CardGames_UCs
         {
             window.Go();
         }
+
+        private void NumberOfPlayers_Slider(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            spLabels.Children.Clear();
+            spTextboxes.Children.Clear();
+
+            for (int i = 0; i < sNumPlay.Value; i++)
+            {
+                spLabels.Children.Add(new Label()
+                {
+                    Content = $"Player{i + 1} Name:",
+                    FontSize = 30,
+                    FontFamily = new FontFamily("SimSun")
+                });
+
+                spTextboxes.Children.Add(new TextBox()
+                {
+                    Name = $"tbxP{i + 1}Name",
+                    Text = $"Player{i + 1}",
+                    FontSize = 24,
+                    FontFamily = new FontFamily("SimSun"),
+                    Background = new SolidColorBrush(Color.FromRgb(76, 127, 127)),
+                    Margin = new Thickness(8)
+                });
+            }
+        }
     }
 }

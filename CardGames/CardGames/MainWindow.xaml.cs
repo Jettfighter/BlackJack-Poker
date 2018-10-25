@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Linq;
 
 namespace CardGames
 {
@@ -61,11 +62,11 @@ namespace CardGames
         //Generates game with parameter and takes user to game screen
         internal void Go()
         {
-            string player1 = nameSelect.tbxP1_Name.Text;
-            string player2 = nameSelect.tbxP2_Name.Text;
-            string player3 = nameSelect.tbxP3_Name.Text;
-            string player4 = nameSelect.tbxP4_Name.Text;
-            string player5 = nameSelect.tbxP5_Name.Text;
+            TextBox[] p = new TextBox[5];
+            for (int i = 0; i < 4; i++)
+            {
+                p[i] = (TextBox)nameSelect.spPlayers.FindName($"tbxP{i + 1}Name");
+            }   
 
             ShowGameArea();
         }
