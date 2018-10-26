@@ -21,10 +21,15 @@ namespace CardGames.CardGames_UCs
     public partial class TitleScreenUC : UserControl
     {
         internal MainWindow window;
-
+        
         public TitleScreenUC()
         {
             InitializeComponent();
+        }
+
+        private MainWindow getWindow()
+        {
+            return Application.Current.MainWindow as MainWindow;
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -39,22 +44,26 @@ namespace CardGames.CardGames_UCs
 
         private void Blackjack_Click(object sender, RoutedEventArgs e)
         {
-            //
+            window = getWindow();
+            window.GameMode(sender, e);
         }
 
         private void Poker_Click(object sender, RoutedEventArgs e)
         {
-            //
+            window = getWindow();
+            window.GameMode(sender, e);
         }
 
         private void GoFish_Click(object sender, RoutedEventArgs e)
         {
-            //
+            window = getWindow();
+            window.GameMode(sender, e);
         }
 
         private void War_Click(object sender, RoutedEventArgs e)
         {
-            //
+            window = getWindow();
+            window.GameMode(sender, e);
         }
     }
 }

@@ -26,6 +26,10 @@ namespace CardGames
         NameSelectUC nameSelect = new NameSelectUC();
         GamePlayUC gamePlay = new GamePlayUC();
         GameOverUC gameOver = new GameOverUC();
+        string gameMode = "Blackjack";
+        SolidColorBrush selected = new SolidColorBrush(Color.FromRgb(144, 209, 209));
+        SolidColorBrush unselected = new SolidColorBrush(Color.FromRgb(76, 127, 127));
+
 
         public MainWindow()
         {
@@ -86,6 +90,44 @@ namespace CardGames
             gamePlay.Visibility = Visibility.Hidden;
             gameOver.Visibility = Visibility.Visible;
             //gameOver.lb_Winner.Content = $"{currentPlayer.Name} wins!";
+        }
+
+        internal void GameMode(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            if (button.Name == "btnBlackjack")
+            {
+                titleScreen.btnBlackjack.Background = selected;
+                titleScreen.btnPoker.Background = unselected;
+                titleScreen.btnGoFish.Background = unselected;
+                titleScreen.btnWar.Background = unselected;
+                gameMode = "Blackjack";
+
+            }
+            else if (button.Name == "btnPoker")
+            {
+                titleScreen.btnBlackjack.Background = unselected;
+                titleScreen.btnPoker.Background = selected;
+                titleScreen.btnGoFish.Background = unselected;
+                titleScreen.btnWar.Background = unselected;
+                gameMode = "Poker";
+            }
+            else if (button.Name == "btnGoFish")
+            {
+                titleScreen.btnBlackjack.Background = unselected;
+                titleScreen.btnPoker.Background = unselected;
+                titleScreen.btnGoFish.Background = selected;
+                titleScreen.btnWar.Background = unselected;
+                gameMode = "GoFish";
+            }
+            else
+            {
+                titleScreen.btnBlackjack.Background = unselected;
+                titleScreen.btnPoker.Background = unselected;
+                titleScreen.btnGoFish.Background = unselected;
+                titleScreen.btnWar.Background = selected;
+                gameMode = "War";
+            }
         }
     }
 }

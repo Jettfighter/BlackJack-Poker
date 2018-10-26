@@ -55,6 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CardGames_UCs\GameModesUC\BlackjackUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardGames_UCs\GameModesUC\GoFishUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardGames_UCs\GameModesUC\PokerUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardGames_UCs\GameModesUC\WarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CardGames_UCs\GameOverUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +94,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CardGames_UCs\GameModesUC\BlackjackUC.xaml.cs">
+      <DependentUpon>BlackjackUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CardGames_UCs\GameModesUC\GoFishUC.xaml.cs">
+      <DependentUpon>GoFishUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CardGames_UCs\GameModesUC\PokerUC.xaml.cs">
+      <DependentUpon>PokerUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CardGames_UCs\GameModesUC\WarUC.xaml.cs">
+      <DependentUpon>WarUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="CardGames_UCs\GameOverUC.xaml.cs">
       <DependentUpon>GameOverUC.xaml</DependentUpon>
@@ -192,6 +220,16 @@
     <Resource Include="Resources\QS.png" />
     <Resource Include="Resources\red_back.png" />
     <Resource Include="Resources\yellow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\racetrackpokertable2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BluPC.png" />
+    <Resource Include="Resources\BPC.png" />
+    <Resource Include="Resources\GPC.png" />
+    <Resource Include="Resources\PPC.png" />
+    <Resource Include="Resources\RPC.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardGames.CardGames_UCs.GameModesUC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,17 @@ namespace CardGames.CardGames_UCs
     public partial class GamePlayUC : UserControl
     {
         internal MainWindow window;
+        BlackjackUC blackjack = new BlackjackUC();
+        PokerUC poker = new PokerUC();
+        GoFishUC goFish = new GoFishUC();
+        WarUC war = new WarUC();
 
         public GamePlayUC()
         {
             InitializeComponent();
+            
+            //Temporary example from PokerUC (displays on the GamePlayUC):
+            gCardArea.Children.Add(poker);
         }
 
         private void MainMenu_Click(object sender, RoutedEventArgs e)

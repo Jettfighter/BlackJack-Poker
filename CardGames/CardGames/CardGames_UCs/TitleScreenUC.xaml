@@ -7,6 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <Grid>
+        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/BPC.png" Height="115" Margin="829,255,0,0" VerticalAlignment="Top" Width="117"/>
+        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/BluPC.png" Height="115" Margin="333,255,0,0" VerticalAlignment="Top" Width="117"/>
         <Image HorizontalAlignment="Left" Source="/Resources/back_cards-07.png" Height="306" Margin="333,94,0,0" VerticalAlignment="Top" Width="600"/>
         <Label Name="lbTitle" Content="Card Games" FontSize="122" HorizontalAlignment="Left" Margin="212,136,0,0" VerticalAlignment="Top" Height="220" Width="856" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo"/>
         <Button Name="btnStart" Content="Start" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="487,574,0,0" VerticalAlignment="Top" Width="218" Height="75" Click="Start_Click" Background="#4c7f7f" />
@@ -17,5 +19,7 @@
         <Button Name="btnWar" Content="War" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="881,460,0,0" VerticalAlignment="Top" Width="204" Height="68" RenderTransformOrigin="1.49,1.106" Background="#4c7f7f" Opacity="0.5" Click="War_Click"/>
         <Label Content="Coming Soon!!!" HorizontalAlignment="Left" FontSize="20" Margin="683,423,0,0" VerticalAlignment="Top" Height="37" Width="145"/>
         <Label Content="Coming Soon!!!" HorizontalAlignment="Left" FontSize="20" Margin="909,423,0,0" VerticalAlignment="Top" Height="37" Width="146"/>
+        <Label x:Name="lbTitle_Copy" Content="Card Games" FontSize="122" HorizontalAlignment="Left" Margin="212,136,0,0" VerticalAlignment="Top" Height="220" Width="856" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo"/>
+        
     </Grid>
 </UserControl>
