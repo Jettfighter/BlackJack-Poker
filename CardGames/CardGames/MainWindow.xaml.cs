@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Linq;
+using CardGames.CardGames_UCs.GameModesUC;
 
 namespace CardGames
 {
@@ -29,7 +30,10 @@ namespace CardGames
         string gameMode = "Blackjack";
         SolidColorBrush selected = new SolidColorBrush(Color.FromRgb(144, 209, 209));
         SolidColorBrush unselected = new SolidColorBrush(Color.FromRgb(76, 127, 127));
-
+        BlackjackUC blackjack = new BlackjackUC();
+        PokerUC poker = new PokerUC();
+        GoFishUC goFish = new GoFishUC();
+        WarUC war = new WarUC();
 
         public MainWindow()
         {
@@ -41,6 +45,10 @@ namespace CardGames
             nameSelect.Visibility = Visibility.Hidden;
             gamePlay.Visibility = Visibility.Hidden;
             gameOver.Visibility = Visibility.Hidden;
+            blackjack.Visibility = Visibility.Hidden;
+            poker.Visibility = Visibility.Hidden;
+            goFish.Visibility = Visibility.Hidden;
+            war.Visibility = Visibility.Hidden;
             titleScreen.window = this;
             nameSelect.window = this;
             gamePlay.window = this;
@@ -52,6 +60,32 @@ namespace CardGames
         {
             titleScreen.Visibility = Visibility.Hidden;
             nameSelect.Visibility = Visibility.Visible;
+            switch (gameMode)
+            {
+                case "Blackjack":
+                    blackjack.Visibility = Visibility.Visible;
+                    gamePlay.gCardArea.Children.Clear();
+                    gamePlay.gCardArea.Children.Add(blackjack);
+                    break;
+
+                case "Poker":
+                    poker.Visibility = Visibility.Visible;
+                    gamePlay.gCardArea.Children.Clear();
+                    gamePlay.gCardArea.Children.Add(poker);
+                    break;
+
+                case "GoFish":
+                    goFish.Visibility = Visibility.Visible;
+                    gamePlay.gCardArea.Children.Clear();
+                    gamePlay.gCardArea.Children.Add(goFish);
+                    break;
+
+                case "War":
+                    war.Visibility = Visibility.Visible;
+                    gamePlay.gCardArea.Children.Clear();
+                    gamePlay.gCardArea.Children.Add(war);
+                    break;
+            }
         }
 
         //Returns user to Main Menu screen.
