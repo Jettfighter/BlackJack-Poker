@@ -34,7 +34,20 @@ namespace CardGames.CardGames_UCs
 
         private void Go_Click(object sender, RoutedEventArgs e)
         {
-            window.Go();
+            List<string> names = null;
+
+            foreach(var element in spPlayers.Children)
+            {
+                if (element.GetType() == typeof(StackPanel))
+                {
+                    StackPanel panel = element as StackPanel;
+
+                    names = panel.Children.OfType<TextBox>()
+                        .Where(texbox => texbox.Name.StartsWith("tbxP"))
+                        .Select(texbox => texbox.Text).ToList<string>();
+                }
+            }
+            window.Go(names);
         }
 
         private void NumberOfPlayers_Slider(object sender, RoutedPropertyChangedEventArgs<double> e)
