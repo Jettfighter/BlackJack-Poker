@@ -13,7 +13,6 @@
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="375,191,0,0" VerticalAlignment="Top" Width="54"/>
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="429,191,0,0" VerticalAlignment="Top" Width="54"/>
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="483,191,0,0" VerticalAlignment="Top" Width="54"/>
-
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/9S.png" Height="82" Margin="113,42,0,0" VerticalAlignment="Top" Width="55"/>
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/5D.png" Height="82" Margin="156,42,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1.21,-0.856"/>
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/QS.png" Height="82" Margin="113,342,0,0" VerticalAlignment="Top" Width="55"/>
@@ -25,8 +24,5 @@
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/AH.png" Height="82" Margin="588,42,0,0" VerticalAlignment="Top" Width="55"/>
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/6D.png" Height="82" Margin="631,42,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1.21,-0.856"/>
         <Label Content="DEALER" HorizontalAlignment="Left" FontSize="28" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="331,60,0,0" VerticalAlignment="Top" Width="147"/>
-
-
-
     </Grid>
 </UserControl>

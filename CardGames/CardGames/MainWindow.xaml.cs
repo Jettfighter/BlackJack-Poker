@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Linq;
 using CardGames.CardGames_UCs.GameModesUC;
 
 namespace CardGames
@@ -136,7 +135,6 @@ namespace CardGames
                 titleScreen.btnGoFish.Background = unselected;
                 titleScreen.btnWar.Background = unselected;
                 gameMode = "Blackjack";
-
             }
             else if (button.Name == "btnPoker")
             {
