@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardGames.CardGames_UCs.GameModesUC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace CardGames.CardGames_UCs
     public partial class TitleScreenUC : UserControl
     {
         internal MainWindow window;
-        
+
         public TitleScreenUC()
         {
             InitializeComponent();
