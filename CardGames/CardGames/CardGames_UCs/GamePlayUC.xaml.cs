@@ -32,7 +32,7 @@ namespace CardGames.CardGames_UCs
             InitializeComponent();
             
             //Temporary example from PokerUC (displays on the GamePlayUC):
-            gCardArea.Children.Add(poker);
+            //gCardArea.Children.Add(poker);
         }
 
         private void MainMenu_Click(object sender, RoutedEventArgs e)
