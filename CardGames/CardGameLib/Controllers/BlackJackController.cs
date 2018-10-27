@@ -9,7 +9,7 @@ namespace CardGameLib.Controllers
 {
     class BlackJackController
     {
-        BlackJack blackjack;
+        Blackjack blackjack;
 
         public void StartGame(string[] playerNames)
         {
@@ -23,5 +23,9 @@ namespace CardGameLib.Controllers
             return yes;
         }
 
+        public void HouseTurn()
+        {
+
+        }
     }
 }
