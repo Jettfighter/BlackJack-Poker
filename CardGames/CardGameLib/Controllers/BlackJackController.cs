@@ -10,6 +10,8 @@ namespace CardGameLib.Controllers
     class BlackJackController
     {
         Blackjack blackjack;
+        private BlackjackPlayer house = new BlackjackPlayer();
+        private int round = 0;
 
         public BlackjackPlayer[] ConvertPlayerToBlackjackPlayer(string[] playerNames)
         {
@@ -19,15 +21,48 @@ namespace CardGameLib.Controllers
                 players[i] = new BlackjackPlayer()
                 {
                     Name = playerNames[i],
-                    Bank = 100
+                    Bank = 100,
+                    BoughtIn = false
                 };
             }
             return players;
         }
 
+        public bool CheckTwentyOne(List<Card> hand)
+        {
+            bool isTwentyOne = false;
+            int total = 0;
+
+            foreach(Card c in hand)
+            {
+                total += c.Value;
+            }
+
+            isTwentyOne = (total == 21 && hand.Count > 2);
+
+            return isTwentyOne;
+        }
+
+        public bool CheckNatural(List<Card> hand)
+        {
+            bool isNatural = false;
+
+            int total = 0;
+
+            foreach (Card c in hand)
+            {
+                total += c.Value;
+            }
+
+            isNatural = (total == 21 && hand.Count == 2);
+
+            return isNatural;
+        }
+
         public void StartGame(string[] playerNames)
         {
             blackjack = new Blackjack(ConvertPlayerToBlackjackPlayer(playerNames));
+            round = 1;
         }
 
         public bool TakeTurn(bool hitMe, string playerName)
@@ -40,6 +75,21 @@ namespace CardGameLib.Controllers
         public void HouseTurn()
         {
 
+        }
+
+        public bool SplittingPairs()
+        {
+            
+            return false;
+        }
+
+        public bool DoublingDown(BlackjackPlayer player)
+        {
+            if(player.Hand.Count==2)
+            {
+
+            }
+            return false;
         }
     }
 }
