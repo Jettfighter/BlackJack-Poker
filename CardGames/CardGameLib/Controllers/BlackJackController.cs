@@ -9,6 +9,24 @@ namespace CardGameLib.Controllers
 {
     public static class BlackJackController
     {
+        public static int ConvertValue(Card card)
+        {
+            int total = 0;
+            if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J')
+            {
+                total = 10;
+            }
+            else if (card.Value == 'A')
+            {
+                total = 11;
+            }
+            else if (card.Value > '0' && card.Value <= '9')
+            {
+                total = card.Value - 48;
+            }
+            return total;
+        }
+
         public static Blackjack blackjack;
         private static BlackjackPlayer house = new BlackjackPlayer();
         private static int round = 0;
@@ -33,7 +51,7 @@ namespace CardGameLib.Controllers
             bool isTwentyOne = false;
             int total = 0;
 
-            foreach(Card c in hand)
+            foreach (Card c in hand)
             {
                 total += c.Value;
             }
@@ -88,12 +106,33 @@ namespace CardGameLib.Controllers
 
         public static bool DoublingDown(string name)
         {
-            Player player = blackjack.GetPlayer(name);
-
+            bool successful = false;
+            BlackjackPlayer player = blackjack.GetPlayer(name);
+            if (round == 1 && player.Hand.Count == 2)
             {
-
+                int total = 0;
+                foreach (var card in player.Hand)
+                {
+                    if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J')
+                    {
+                        total += 10;
+                    }
+                    else if (card.Value == 'A')
+                    {
+                        total += 1;
+                    }
+                    else if (card.Value > '0' && card.Value <= '9')
+                    {
+                        total += card.Value - 48;
+                    }
+                }
+                if (total >= 9 && total <= 11)
+                {
+                    successful = true;
+                }
             }
-            return false;
+
+            return successful;
         }
     }
 }
