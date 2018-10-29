@@ -67,6 +67,8 @@ namespace CardGames
                     blackjack.Visibility = Visibility.Visible;
                     gamePlay.gCardArea.Children.Clear();
                     gamePlay.gCardArea.Children.Add(blackjack);
+                    nameSelect.sNumPlay.Minimum = 1;
+                    nameSelect.sNumPlay.Maximum = 5;
                     break;
 
                 case "Poker":

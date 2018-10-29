@@ -77,15 +77,18 @@ namespace CardGameLib.Controllers
 
         }
 
-        public bool SplittingPairs()
+        public bool SplittingPairs(BlackjackPlayer player)
         {
-            
+            if (player.Hand.Count == 2)
+            {
+
+            }
             return false;
         }
 
-        public bool DoublingDown(BlackjackPlayer player)
+        public bool DoublingDown()
         {
-            if(player.Hand.Count==2)
+            //if(player.Hand.Count==2)
             {
 
             }
