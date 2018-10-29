@@ -25,6 +25,37 @@ namespace CardGameLib.Controllers
             return players;
         }
 
+        public bool CheckTwentyOne(List<Card> hand)
+        {
+            bool isTwentyOne = false;
+            int total = 0;
+
+            foreach(Card c in hand)
+            {
+                total += c.Value;
+            }
+
+            isTwentyOne = (total == 21 && hand.Count > 2);
+
+            return isTwentyOne;
+        }
+
+        public bool CheckNatural(List<Card> hand)
+        {
+            bool isNatural = false;
+
+            int total = 0;
+
+            foreach (Card c in hand)
+            {
+                total += c.Value;
+            }
+
+            isNatural = (total == 21 && hand.Count == 2);
+
+            return isNatural;
+        }
+
         public void StartGame(string[] playerNames)
         {
             blackjack = new Blackjack(ConvertPlayerToBlackjackPlayer(playerNames));
