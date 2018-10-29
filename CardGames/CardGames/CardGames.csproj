@@ -231,5 +231,11 @@
     <Resource Include="Resources\PPC.png" />
     <Resource Include="Resources\RPC.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Placeholders\BlackjackPlaceholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Placeholders\ComingSoonPlaceholder.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
