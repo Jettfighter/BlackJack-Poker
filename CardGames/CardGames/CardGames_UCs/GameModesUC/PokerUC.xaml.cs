@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CardGameLib.Controllers;
 
 namespace CardGames.CardGames_UCs.GameModesUC
 {
@@ -21,15 +20,34 @@ namespace CardGames.CardGames_UCs.GameModesUC
     /// </summary>
     public partial class PokerUC : UserControl
     {
-        PokerController controller = new PokerController();
         public PokerUC()
         {
             InitializeComponent();
         }
 
-        public void NewGame(List<string> names)
+        private void Bet_Click(object sender, RoutedEventArgs e)
         {
-            controller.NewGame(names);
+
+        }
+
+        private void Call_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Raise_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Fold_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void All_In_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
