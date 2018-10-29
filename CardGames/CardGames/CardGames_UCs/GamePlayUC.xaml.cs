@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CardGameLib.Controllers;
 
 namespace CardGames.CardGames_UCs
 {
@@ -26,6 +27,7 @@ namespace CardGames.CardGames_UCs
         PokerUC poker = new PokerUC();
         GoFishUC goFish = new GoFishUC();
         WarUC war = new WarUC();
+        public List<string> names = new List<string>();
 
         public GamePlayUC()
         {
@@ -43,6 +45,29 @@ namespace CardGames.CardGames_UCs
         private void PlayAgain_Click(object sender, RoutedEventArgs e)
         {
             window.Go();
+        }
+
+        public void NewGame(string game)
+        {
+            //Insert code to create a new game depending on which game is being played
+            switch(game)
+            {
+                case "Blackjack":
+                    BlackJackController.StartGame(names.ToArray());
+                    break;
+
+                case "Poker":
+                    poker.NewGame(names);
+                    break;
+
+                case "GoFish":
+                    
+                    break;
+
+                case "War":
+                    
+                    break;
+            }
         }
     }
 }

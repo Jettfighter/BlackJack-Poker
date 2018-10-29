@@ -14,7 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CardGames.CardGames_UCs.GameModesUC;
-using CardGameLib.Controllers;
 
 namespace CardGames
 {
@@ -34,7 +33,6 @@ namespace CardGames
         PokerUC poker = new PokerUC();
         GoFishUC goFish = new GoFishUC();
         WarUC war = new WarUC();
-        PokerController pokerController;
 
         public MainWindow()
         {
@@ -67,6 +65,8 @@ namespace CardGames
                     blackjack.Visibility = Visibility.Visible;
                     gamePlay.gCardArea.Children.Clear();
                     gamePlay.gCardArea.Children.Add(blackjack);
+                    nameSelect.sNumPlay.Minimum = 1;
+                    nameSelect.sNumPlay.Maximum = 5;
                     break;
 
                 case "Poker":
@@ -89,6 +89,8 @@ namespace CardGames
                     gamePlay.gCardArea.Children.Add(war);
                     break;
             }
+
+            gamePlay.NewGame(gameMode);
         }
 
         //Returns user to Main Menu screen.
@@ -103,14 +105,14 @@ namespace CardGames
         //Generates game with parameter and takes user to game screen
         internal void Go(List<string> names = null)
         {
+
             TextBox[] p = new TextBox[5];
             for (int i = 0; i < 5; i++)
             {
                 p[i] = (TextBox)nameSelect.spPlayers.FindName($"tbxP{i + 1}Name");
             }
 
-            //gamePlay.lbPlayerLabel.Content = $"{pokerController.CurrentPlayer.Name}'s Turn";
-
+            gamePlay.names = names;
             ShowGameArea();
         }
 
@@ -141,6 +143,7 @@ namespace CardGames
                 titleScreen.btnGoFish.Background = unselected;
                 titleScreen.btnWar.Background = unselected;
                 gameMode = "Blackjack";
+
             }
             else if (button.Name == "btnPoker")
             {
