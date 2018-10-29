@@ -25,7 +25,6 @@ namespace CardGameLib.Models
                     return player;
                 }
             }
-
             return null;
         }
 
