@@ -45,6 +45,7 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PokerController.cs" />
     <Compile Include="Models\Blackjack.cs" />
+    <Compile Include="Models\BlackjackPlayer.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\PokerPlayer.cs" />
     <Compile Include="Models\Deck.cs" />

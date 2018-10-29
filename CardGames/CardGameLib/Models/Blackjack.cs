@@ -8,10 +8,12 @@ namespace CardGameLib.Models
 {
     public class Blackjack
     {
-        Player[] players;
-        public Blackjack(Player[] players)
+        private Player[] players;
+        public Deck Deck { get; set; }
+        public  Blackjack(BlackjackPlayer[] players)
         {
             this.players = players;
+            Deck = new Deck();
         }
 
         public Player GetPlayer(string name)
@@ -28,7 +30,7 @@ namespace CardGameLib.Models
         }
 
 
-
+        
 
     }
 }

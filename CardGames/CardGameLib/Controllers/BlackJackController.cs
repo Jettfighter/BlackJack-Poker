@@ -11,12 +11,26 @@ namespace CardGameLib.Controllers
     {
         Blackjack blackjack;
 
-        public void StartGame(string[] playerNames)
+        public BlackjackPlayer[] ConvertPlayerToBlackjackPlayer(string[] playerNames)
         {
-
+            BlackjackPlayer[] players = new BlackjackPlayer[playerNames.Length];
+            for (int i = 0; i < players.Length; i++)
+            {
+                players[i] = new BlackjackPlayer()
+                {
+                    Name = playerNames[i],
+                    Bank = 100
+                };
+            }
+            return players;
         }
 
-        public bool TakeTurn(bool hitMe)
+        public void StartGame(string[] playerNames)
+        {
+            blackjack = new Blackjack(ConvertPlayerToBlackjackPlayer(playerNames));
+        }
+
+        public bool TakeTurn(bool hitMe, string playerName)
         {
             bool yes = true;
 
