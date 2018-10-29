@@ -9,7 +9,7 @@ namespace CardGameLib.Controllers
 {
     public static class BlackJackController
     {
-        private static Blackjack blackjack;
+        public static Blackjack blackjack;
         private static BlackjackPlayer house = new BlackjackPlayer();
         private static int round = 0;
 
