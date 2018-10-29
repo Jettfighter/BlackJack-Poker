@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CardGameLib.Controllers;
 
 namespace CardGames.CardGames_UCs
 {
@@ -52,7 +53,7 @@ namespace CardGames.CardGames_UCs
             switch(game)
             {
                 case "Blackjack":
-                   
+                    BlackJackController.StartGame(names.ToArray());
                     break;
 
                 case "Poker":

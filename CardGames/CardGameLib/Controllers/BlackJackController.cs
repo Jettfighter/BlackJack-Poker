@@ -7,13 +7,13 @@ using CardGameLib.Models;
 
 namespace CardGameLib.Controllers
 {
-    class BlackJackController
+    public static class BlackJackController
     {
-        Blackjack blackjack;
-        private BlackjackPlayer house = new BlackjackPlayer();
-        private int round = 0;
+        private static Blackjack blackjack;
+        private static BlackjackPlayer house = new BlackjackPlayer();
+        private static int round = 0;
 
-        public BlackjackPlayer[] ConvertPlayerToBlackjackPlayer(string[] playerNames)
+        public static BlackjackPlayer[] ConvertPlayerToBlackjackPlayer(string[] playerNames)
         {
             BlackjackPlayer[] players = new BlackjackPlayer[playerNames.Length];
             for (int i = 0; i < players.Length; i++)
@@ -28,7 +28,7 @@ namespace CardGameLib.Controllers
             return players;
         }
 
-        public bool CheckTwentyOne(List<Card> hand)
+        public static bool CheckTwentyOne(List<Card> hand)
         {
             bool isTwentyOne = false;
             int total = 0;
@@ -43,7 +43,7 @@ namespace CardGameLib.Controllers
             return isTwentyOne;
         }
 
-        public bool CheckNatural(List<Card> hand)
+        public static bool CheckNatural(List<Card> hand)
         {
             bool isNatural = false;
 
@@ -59,25 +59,25 @@ namespace CardGameLib.Controllers
             return isNatural;
         }
 
-        public void StartGame(string[] playerNames)
+        public static void StartGame(string[] playerNames)
         {
             blackjack = new Blackjack(ConvertPlayerToBlackjackPlayer(playerNames));
             round = 1;
         }
 
-        public bool TakeTurn(bool hitMe, string playerName)
+        public static bool TakeTurn(bool hitMe, string playerName)
         {
             bool yes = true;
 
             return yes;
         }
 
-        public void HouseTurn()
+        public static void HouseTurn()
         {
 
         }
 
-        public bool SplittingPairs(BlackjackPlayer player)
+        public static bool SplittingPairs(BlackjackPlayer player)
         {
             if (player.Hand.Count == 2)
             {
@@ -86,7 +86,7 @@ namespace CardGameLib.Controllers
             return false;
         }
 
-        public bool DoublingDown()
+        public static bool DoublingDown()
         {
             //if(player.Hand.Count==2)
             {

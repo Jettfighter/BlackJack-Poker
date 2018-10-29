@@ -10,6 +10,7 @@ namespace CardGameLib.Models
     {
         private Player[] players;
         public Deck Deck { get; set; }
+
         public  Blackjack(BlackjackPlayer[] players)
         {
             this.players = players;
@@ -28,7 +29,10 @@ namespace CardGameLib.Models
             return null;
         }
 
-
+        public Player[] GetAllPlayers()
+        {
+            return players;
+        }
         
 
     }
