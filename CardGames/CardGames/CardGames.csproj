@@ -237,5 +237,11 @@
   <ItemGroup>
     <Resource Include="Resources\Placeholders\ComingSoonPlaceholder.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardGameLib\CardGameLib.csproj">
+      <Project>{b32d8bb1-6a6c-426a-bff1-88acd6a84fd6}</Project>
+      <Name>CardGameLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

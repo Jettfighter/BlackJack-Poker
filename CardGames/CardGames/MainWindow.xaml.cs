@@ -13,8 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Linq;
 using CardGames.CardGames_UCs.GameModesUC;
+using CardGameLib.Controllers;
 
 namespace CardGames
 {
@@ -34,6 +34,7 @@ namespace CardGames
         PokerUC poker = new PokerUC();
         GoFishUC goFish = new GoFishUC();
         WarUC war = new WarUC();
+        PokerController pokerController;
 
         public MainWindow()
         {
@@ -106,7 +107,9 @@ namespace CardGames
             for (int i = 0; i < 5; i++)
             {
                 p[i] = (TextBox)nameSelect.spPlayers.FindName($"tbxP{i + 1}Name");
-            }   
+            }
+
+            //gamePlay.lbPlayerLabel.Content = $"{pokerController.CurrentPlayer.Name}'s Turn";
 
             ShowGameArea();
         }
@@ -138,7 +141,6 @@ namespace CardGames
                 titleScreen.btnGoFish.Background = unselected;
                 titleScreen.btnWar.Background = unselected;
                 gameMode = "Blackjack";
-
             }
             else if (button.Name == "btnPoker")
             {
