@@ -7,7 +7,7 @@ using CardGameLib.Models;
 
 namespace CardGameLib.Controllers
 {
-    class PokerController
+    public class PokerController
     {
         private Deck Deck = new Deck();
         private List<PokerPlayer> Players = new List<PokerPlayer>();
@@ -18,6 +18,8 @@ namespace CardGameLib.Controllers
 
         //This variable determines which player's turn it is
         private int PlayerCounter = 0;
+
+        public Player CurrentPlayer { get; set; }
 
         //In the window when the number of players and player names are determined
         //Player names can be added to a list<string> which will be passed into NewGame to determine number of players and player names.

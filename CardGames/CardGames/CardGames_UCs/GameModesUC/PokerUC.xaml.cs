@@ -24,5 +24,25 @@ namespace CardGames.CardGames_UCs.GameModesUC
         {
             InitializeComponent();
         }
+
+        private void Bet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Call_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Raise_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Fold_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
