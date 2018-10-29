@@ -7,22 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/racetrackpokertable2.png" Height="269" Margin="135,100,0,0" VerticalAlignment="Top" Width="528"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="267,191,0,0" VerticalAlignment="Top" Width="54"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="321,191,0,0" VerticalAlignment="Top" Width="54"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="375,191,0,0" VerticalAlignment="Top" Width="54"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="429,191,0,0" VerticalAlignment="Top" Width="54"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="82" Margin="483,191,0,0" VerticalAlignment="Top" Width="54"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/9S.png" Height="82" Margin="113,42,0,0" VerticalAlignment="Top" Width="55"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/5D.png" Height="82" Margin="156,42,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1.21,-0.856"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/QS.png" Height="82" Margin="113,342,0,0" VerticalAlignment="Top" Width="55"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/QD.png" Height="82" Margin="156,342,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1.21,-0.856"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/10H.png" Height="82" Margin="353,363,0,0" VerticalAlignment="Top" Width="55"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/9H.png" Height="82" Margin="396,363,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1.21,-0.856"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/KC.png" Height="82" Margin="588,342,0,0" VerticalAlignment="Top" Width="55"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/JD.png" Height="82" Margin="631,342,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1.21,-0.856"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/AH.png" Height="82" Margin="588,42,0,0" VerticalAlignment="Top" Width="55"/>
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/6D.png" Height="82" Margin="631,42,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1.21,-0.856"/>
-        <Label Content="DEALER" HorizontalAlignment="Left" FontSize="28" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="331,60,0,0" VerticalAlignment="Top" Width="147"/>
+        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/racetrackpokertable2.png" Height="304" Margin="101,55,0,0" VerticalAlignment="Top" Width="597"/>
+        <Image Name="com1" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="250,158,0,0" VerticalAlignment="Top" Width="61"/>
+        <Image Name="com2" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="311,158,0,0" VerticalAlignment="Top" Width="61"/>
+        <Image Name="com3" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="372,158,0,0" VerticalAlignment="Top" Width="61"/>
+        <Image Name="com4" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="433,158,0,0" VerticalAlignment="Top" Width="61"/>
+        <Image Name="com5" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="494,158,0,0" VerticalAlignment="Top" Width="61"/>
+        <Image Name="ph1" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="340,357,0,0" VerticalAlignment="Top" Width="62"/>
+        <Image Name="ph2" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="402,357,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.21,-0.856"/>
+        <Label Content="DEALER" HorizontalAlignment="Left" FontSize="33" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="322,10,0,0" VerticalAlignment="Top" Width="167" Height="49"/>
+        <Button Name="btnBet" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Bet" HorizontalAlignment="Left" Margin="62,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Bet_Click"/>
+        <Button x:Name="btnCall" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Call" HorizontalAlignment="Left" Margin="189,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Call_Click"/>
+        <Button x:Name="btnRaise" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Raise" HorizontalAlignment="Left" Margin="492,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Raise_Click"/>
+        <Button x:Name="btnFold" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Fold" HorizontalAlignment="Left" Margin="619,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Fold_Click"/>
     </Grid>
 </UserControl>
