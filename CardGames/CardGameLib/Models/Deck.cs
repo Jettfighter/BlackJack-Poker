@@ -13,6 +13,9 @@ namespace CardGameLib.Models
 
         public Deck()
         {
+            CardsInDeck = new List<Card>();
+            CardsPlayed = new List<Card>();
+
             string suit = "";
             for (int i = 0; i < 4; i++)
             {

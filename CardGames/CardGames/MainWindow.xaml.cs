@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Linq;
 using CardGames.CardGames_UCs.GameModesUC;
 
 namespace CardGames
@@ -88,6 +87,8 @@ namespace CardGames
                     gamePlay.gCardArea.Children.Add(war);
                     break;
             }
+
+            gamePlay.NewGame(gameMode);
         }
 
         //Returns user to Main Menu screen.
@@ -102,12 +103,14 @@ namespace CardGames
         //Generates game with parameter and takes user to game screen
         internal void Go(List<string> names = null)
         {
+
             TextBox[] p = new TextBox[5];
             for (int i = 0; i < 5; i++)
             {
                 p[i] = (TextBox)nameSelect.spPlayers.FindName($"tbxP{i + 1}Name");
-            }   
+            }
 
+            gamePlay.names = names;
             ShowGameArea();
         }
 

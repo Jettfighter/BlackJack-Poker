@@ -36,17 +36,10 @@ namespace CardGames.CardGames_UCs
         {
             List<string> names = null;
 
-            foreach(var element in spPlayers.Children)
-            {
-                if (element.GetType() == typeof(StackPanel))
-                {
-                    StackPanel panel = element as StackPanel;
+            names = spTextboxes.Children.OfType<TextBox>()
+                   .Where(texbox => texbox.Name.StartsWith("tbxP"))
+                   .Select(texbox => texbox.Text).ToList<string>();
 
-                    names = panel.Children.OfType<TextBox>()
-                        .Where(texbox => texbox.Name.StartsWith("tbxP"))
-                        .Select(texbox => texbox.Text).ToList<string>();
-                }
-            }
             window.Go(names);
         }
 

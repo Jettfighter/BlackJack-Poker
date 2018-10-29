@@ -7,7 +7,7 @@ using CardGameLib.Models;
 
 namespace CardGameLib.Controllers
 {
-    class PokerController
+    public class PokerController
     {
         private Deck Deck = new Deck();
         private List<PokerPlayer> Players = new List<PokerPlayer>();
@@ -41,8 +41,8 @@ namespace CardGameLib.Controllers
                 Players.Add(player);
             }
 
-            Players[0].SmallBlind = true;
-            Players[1].BigBlind = true;
+            //Players[0].SmallBlind = true;
+            //Players[1].BigBlind = true;
         }
 
         //
