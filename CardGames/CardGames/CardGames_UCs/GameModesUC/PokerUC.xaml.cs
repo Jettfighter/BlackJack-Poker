@@ -44,5 +44,10 @@ namespace CardGames.CardGames_UCs.GameModesUC
         {
 
         }
+
+        private void All_In_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

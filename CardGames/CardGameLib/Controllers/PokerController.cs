@@ -43,8 +43,8 @@ namespace CardGameLib.Controllers
                 Players.Add(player);
             }
 
-            Players[0].SmallBlind = true;
-            Players[1].BigBlind = true;
+            //Players[0].SmallBlind = true;
+            //Players[1].BigBlind = true;
         }
 
         //

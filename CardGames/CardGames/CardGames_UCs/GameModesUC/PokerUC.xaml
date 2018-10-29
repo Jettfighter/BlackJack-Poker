@@ -16,9 +16,15 @@
         <Image Name="ph1" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="340,357,0,0" VerticalAlignment="Top" Width="62"/>
         <Image Name="ph2" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="402,357,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.21,-0.856"/>
         <Label Content="DEALER" HorizontalAlignment="Left" FontSize="33" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="322,10,0,0" VerticalAlignment="Top" Width="167" Height="49"/>
-        <Button Name="btnBet" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Bet" HorizontalAlignment="Left" Margin="62,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Bet_Click"/>
-        <Button x:Name="btnCall" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Call" HorizontalAlignment="Left" Margin="189,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Call_Click"/>
-        <Button x:Name="btnRaise" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Raise" HorizontalAlignment="Left" Margin="492,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Raise_Click"/>
-        <Button x:Name="btnFold" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Fold" HorizontalAlignment="Left" Margin="619,384,0,0" VerticalAlignment="Top" Width="122" Height="37" Click="Fold_Click"/>
+        <Button Name="btnBet" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Bet" HorizontalAlignment="Left" Margin="516,362,0,0" VerticalAlignment="Top" Width="113" Height="34" Click="Bet_Click"/>
+        <Button x:Name="btnCall" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Call" HorizontalAlignment="Left" Margin="634,362,0,0" VerticalAlignment="Top" Width="113" Height="34" Click="Call_Click"/>
+        <Button x:Name="btnRaise" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Raise" HorizontalAlignment="Left" Margin="516,402,0,0" VerticalAlignment="Top" Width="113" Height="34" Click="Raise_Click"/>
+        <Button x:Name="btnFold" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Fold" HorizontalAlignment="Left" Margin="634,402,0,0" VerticalAlignment="Top" Width="113" Height="34" Click="Fold_Click"/>
+        <Label Name="lbBank" Content="Amount in Bank: $$$." FontSize="20" FontFamily="SimSun" HorizontalAlignment="Left" Margin="9,372,0,0" VerticalAlignment="Top" Height="32" Width="250"/>
+        <Label Content="Bet Amount:" FontSize="18" FontFamily="SimSun" HorizontalAlignment="Left" Margin="9,404,0,0" VerticalAlignment="Top" Width="105" Height="38"/>
+        <Slider x:Name="sBetAmount" HorizontalAlignment="Left" TickFrequency="1" IsSnapToTickEnabled="True" Value="5" Margin="114,406,0,0" VerticalAlignment="Top" Height="38" Width="151" TickPlacement="BottomRight" Maximum="1000" Minimum="0"/>
+        <TextBox Text="{Binding Value, ElementName=sBetAmount, Mode=TwoWay}" FontSize="14" FontFamily="SimSun" HorizontalAlignment="Left" Height="34" Margin="265,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Background="#4c7f7f"/>
+        <Button Name="btnAllIn" Content="All In" FontSize="12" FontFamily="SimSun" Background="#4c7f7f" HorizontalAlignment="Left" Margin="265,367,0,0" VerticalAlignment="Top" Width="55" Height="34" Click="All_In_Click"/>
+        <Label x:Name="lbPot" Content="Amount in Pot: $$$." FontSize="20" FontFamily="SimSun" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Height="32" Width="250"/>
     </Grid>
 </UserControl>
