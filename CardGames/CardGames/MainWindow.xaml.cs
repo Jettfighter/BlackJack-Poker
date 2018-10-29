@@ -71,6 +71,8 @@ namespace CardGames
                     poker.Visibility = Visibility.Visible;
                     gamePlay.gCardArea.Children.Clear();
                     gamePlay.gCardArea.Children.Add(poker);
+                    nameSelect.sNumPlay.Minimum = 2;
+                    nameSelect.sNumPlay.Maximum = 4;
                     break;
 
                 case "GoFish":
@@ -97,7 +99,7 @@ namespace CardGames
         }
 
         //Generates game with parameter and takes user to game screen
-        internal void Go()
+        internal void Go(List<string> names = null)
         {
             TextBox[] p = new TextBox[5];
             for (int i = 0; i < 5; i++)

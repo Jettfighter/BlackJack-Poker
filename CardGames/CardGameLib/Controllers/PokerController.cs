@@ -13,8 +13,10 @@ namespace CardGameLib.Controllers
         private List<PokerPlayer> Players = new List<PokerPlayer>();
 
         private int Pot = 0;
+        private int Blind = 4;
+        private int CurrentBet = 0;
 
-        //
+        //This variable determines which player's turn it is
         private int PlayerCounter = 0;
 
         //In the window when the number of players and player names are determined
@@ -29,7 +31,7 @@ namespace CardGameLib.Controllers
                 PokerPlayer player = new PokerPlayer()
                 {
                     Name = name,
-                    Bank = 500,
+                    Bank = 100,
                     SmallBlind = false,
                     BigBlind = false,
                     Folded = false,
@@ -64,12 +66,17 @@ namespace CardGameLib.Controllers
 
         public void Call()
         {
-
+            Players[PlayerCounter].Bank -= CurrentBet;
+            Pot += CurrentBet;
+            IncrementCounter();
         }
 
-        public void Raise()
+        public void Raise(int raise)
         {
-
+            CurrentBet += raise;
+            Players[PlayerCounter].Bank -= CurrentBet;
+            Pot += CurrentBet;
+            IncrementCounter();
         }
     }
 }
