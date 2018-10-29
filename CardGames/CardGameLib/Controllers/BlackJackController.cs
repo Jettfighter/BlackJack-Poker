@@ -86,9 +86,10 @@ namespace CardGameLib.Controllers
             return false;
         }
 
-        public static bool DoublingDown()
+        public static bool DoublingDown(string name)
         {
-            //if(player.Hand.Count==2)
+            Player player = blackjack.GetPlayer(name);
+
             {
 
             }
