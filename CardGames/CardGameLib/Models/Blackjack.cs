@@ -8,7 +8,7 @@ namespace CardGameLib.Models
 {
     public class Blackjack
     {
-        private Player[] players;
+        private BlackjackPlayer[] players;
         public Deck Deck { get; set; }
 
         public  Blackjack(BlackjackPlayer[] players)
@@ -17,7 +17,7 @@ namespace CardGameLib.Models
             Deck = new Deck();
         }
 
-        public Player GetPlayer(string name)
+        public BlackjackPlayer GetPlayer(string name)
         {
             foreach (var player in players)
             {
