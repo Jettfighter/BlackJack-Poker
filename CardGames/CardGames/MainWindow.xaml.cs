@@ -34,16 +34,30 @@ namespace CardGames
             AddUserControl(new TitleScreenUC());
         }
 
-        public void AddUserControl(IButtonClicked userControl)
+        public void AddUserControl(IButtonClicked userControl, bool IsGameUserControl = false)
         {
+            UserControl userControlToAdd = null;
             MainGrid.Children.Clear();
-            MainGrid.Children.Add(userControl as UserControl);
-            userControl.GameButtonClicked += GameButtonClicked;
 
-            if (userControl.GetType() == typeof(NameSelectUC))
+            if (IsGameUserControl)
+            {
+                var gamePlay = new GamePlayUC();
+                gamePlay.GameButtonClicked += GameButtonClicked;
+                gamePlay.gCardArea.Children.Add(userControl as UserControl);
+                userControlToAdd = gamePlay;
+            }
+            else if (userControl.GetType() == typeof(NameSelectUC))
             {
                 ((NameSelectUC)userControl).GameStarting += StartGame;
+                userControlToAdd = userControl as UserControl;
             }
+            else
+            {
+                userControlToAdd = userControl as UserControl;
+            }
+
+            userControl.GameButtonClicked += GameButtonClicked;
+            MainGrid.Children.Add(userControlToAdd);
         }
 
         private void StartGame(List<string> names)
@@ -51,10 +65,10 @@ namespace CardGames
             switch (game)
             {
                 case Game.BlackJack:
-                    AddUserControl(new BlackjackUC(names));
+                    AddUserControl(new BlackjackUC(names), true);
                     break;
                 case Game.Poker:
-                    AddUserControl(new PokerUC(names));
+                    AddUserControl(new PokerUC(names), true);
                     break;
 
             }
@@ -72,6 +86,7 @@ namespace CardGames
                     game = Game.Poker;
                     break;
                 case "btnBack":
+                case "mainMenu":
                     AddUserControl(new TitleScreenUC());
                     break;
             }

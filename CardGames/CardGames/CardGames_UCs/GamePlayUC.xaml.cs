@@ -20,15 +20,9 @@ namespace CardGames.CardGames_UCs
     /// <summary>
     /// Interaction logic for GamePlayUC.xaml
     /// </summary>
-    public partial class GamePlayUC : UserControl
+    public partial class GamePlayUC : UserControl, IButtonClicked
     {
-        internal MainWindow window;
-        //BlackjackUC blackjack = new BlackjackUC();
-        //PokerUC poker = new PokerUC();
-        GoFishUC goFish = new GoFishUC();
-        WarUC war = new WarUC();
-        public List<string> names = new List<string>();
-
+        public event ButtonClicked GameButtonClicked;
         public GamePlayUC()
         {
             InitializeComponent();
@@ -40,6 +34,7 @@ namespace CardGames.CardGames_UCs
         private void MainMenu_Click(object sender, RoutedEventArgs e)
         {
             //window.MainMenu();
+            GameButtonClicked?.Invoke("mainMenu");
         }
 
         private void PlayAgain_Click(object sender, RoutedEventArgs e)
