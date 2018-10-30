@@ -45,7 +45,6 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         private void NextPhase()
         {
-
             if (PokerController.NextPhase())
             {
                 if(Flop)
@@ -61,7 +60,6 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
                 }
             }
-
         }
 
         private void Bet_Click(object sender, RoutedEventArgs e)
@@ -78,12 +76,12 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         private void Raise_Click(object sender, RoutedEventArgs e)
         {
-
+            //PokerController.Raise(0);
         }
 
         private void Fold_Click(object sender, RoutedEventArgs e)
         {
-
+            //PokerController.Fold();
         }
 
         private void All_In_Click(object sender, RoutedEventArgs e)
