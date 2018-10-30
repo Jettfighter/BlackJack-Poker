@@ -25,6 +25,7 @@ namespace CardGames.CardGames_UCs.GameModesUC
         private bool Flop;
         private bool Turn;
         private bool River;
+
         public PokerUC(List<string> names)
         {
             InitializeComponent();
