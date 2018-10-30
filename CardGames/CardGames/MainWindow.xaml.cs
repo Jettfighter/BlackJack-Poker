@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CardGames.CardGames_UCs.GameModesUC;
+using CardGameLib.Controllers;
 
 namespace CardGames
 {
@@ -64,6 +65,7 @@ namespace CardGames
             switch (game)
             {
                 case Game.BlackJack:
+                    BlackJackController.StartGame(names.ToArray());
                     AddUserControl(new BlackjackUC(names), true);
                     break;
                 case Game.Poker:

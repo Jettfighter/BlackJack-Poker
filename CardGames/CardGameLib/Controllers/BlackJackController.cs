@@ -55,8 +55,10 @@ namespace CardGameLib.Controllers
             //give out the first card to each player
             foreach (var player in blackjack.GetAllPlayers())
             {
+                player.Hand = new List<Card>();
                 player.Hand.Add(blackjack.Deck.GetCard());
             }
+            house.Hand = new List<Card>();
             house.Hand.Add(blackjack.Deck.GetCard());
 
             //give out the second card to each player
