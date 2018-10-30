@@ -22,6 +22,9 @@ namespace CardGames.CardGames_UCs.GameModesUC
     public partial class PokerUC : UserControl, IButtonClicked
     {
         public event ButtonClicked GameButtonClicked;
+        private bool Flop;
+        private bool Turn;
+        private bool River;
         public PokerUC(List<string> names)
         {
             InitializeComponent();
@@ -35,6 +38,24 @@ namespace CardGames.CardGames_UCs.GameModesUC
         public void GetPlayerInfo()
         {
 
+        }
+
+        public void NextPhase()
+        {
+            
+
+            if(Flop)
+            {
+
+            }
+            else if (Turn)
+            {
+
+            }
+            else if (River)
+            {
+
+            }
         }
 
         private void Bet_Click(object sender, RoutedEventArgs e)

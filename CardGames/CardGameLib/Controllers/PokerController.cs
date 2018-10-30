@@ -58,6 +58,16 @@ namespace CardGameLib.Controllers
             {
                 PlayerCounter++;
             }
+
+            if (Players[PlayerCounter].Folded)
+            {
+                PlayerCounter++;
+            }
+        }
+
+        public static bool NextPhase()
+        {
+
         }
 
         public static int GetBank()
@@ -79,15 +89,22 @@ namespace CardGameLib.Controllers
         public static void Call()
         {
             Players[PlayerCounter].Bank -= CurrentBet;
+            Players[PlayerCounter].AmountBet = CurrentBet;
             Pot += CurrentBet;
             IncrementCounter();
         }
 
         public static void Raise(int raise)
         {
-            CurrentBet += raise;
+            //Player calls first
             Players[PlayerCounter].Bank -= CurrentBet;
+            Players[PlayerCounter].AmountBet = CurrentBet;
             Pot += CurrentBet;
+
+            //Then Player raises
+            CurrentBet += raise;
+            Players[PlayerCounter].Bank -= raise;
+            Pot += raise;
             IncrementCounter();
         }
     }
