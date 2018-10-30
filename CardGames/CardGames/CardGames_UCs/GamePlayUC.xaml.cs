@@ -23,8 +23,8 @@ namespace CardGames.CardGames_UCs
     public partial class GamePlayUC : UserControl
     {
         internal MainWindow window;
-        BlackjackUC blackjack = new BlackjackUC();
-        PokerUC poker = new PokerUC();
+        //BlackjackUC blackjack = new BlackjackUC();
+        //PokerUC poker = new PokerUC();
         GoFishUC goFish = new GoFishUC();
         WarUC war = new WarUC();
         public List<string> names = new List<string>();
@@ -32,40 +32,40 @@ namespace CardGames.CardGames_UCs
         public GamePlayUC()
         {
             InitializeComponent();
-            
+
             //Temporary example from PokerUC (displays on the GamePlayUC):
             //gCardArea.Children.Add(poker);
         }
 
         private void MainMenu_Click(object sender, RoutedEventArgs e)
         {
-            window.MainMenu();
+            //window.MainMenu();
         }
 
         private void PlayAgain_Click(object sender, RoutedEventArgs e)
         {
-            window.Go();
+            //window.Go();
         }
 
         public void NewGame(string game)
         {
             //Insert code to create a new game depending on which game is being played
-            switch(game)
+            switch (game)
             {
                 case "Blackjack":
-                    BlackJackController.StartGame(names.ToArray());
+                    //BlackJackController.StartGame(names.ToArray());
                     break;
 
                 case "Poker":
-                    poker.NewGame(names);
+                    //poker.NewGame(names);
                     break;
 
                 case "GoFish":
-                    
+
                     break;
 
                 case "War":
-                    
+
                     break;
             }
         }

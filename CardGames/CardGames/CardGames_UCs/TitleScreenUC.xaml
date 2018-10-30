@@ -11,15 +11,14 @@
         <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/BluPC.png" Height="115" Margin="333,255,0,0" VerticalAlignment="Top" Width="117"/>
         <Image HorizontalAlignment="Left" Source="/Resources/back_cards-07.png" Height="306" Margin="333,94,0,0" VerticalAlignment="Top" Width="600"/>
         <Label Name="lbTitle" Content="Card Games" FontSize="122" HorizontalAlignment="Left" Margin="212,136,0,0" VerticalAlignment="Top" Height="220" Width="856" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo"/>
-        <Button Name="btnStart" Content="Start" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="487,574,0,0" VerticalAlignment="Top" Width="218" Height="75" Click="Start_Click" Background="#4c7f7f" />
-        <Button Name="btnHelp" Content="?" HorizontalAlignment="Left" FontFamily="SimSun" FontSize="28" Margin="729,574,0,0" VerticalAlignment="Top" Width="83" Height="75" Click="Help_Click" Background="#4c7f7f"/>
-        <Button Name="btnBlackjack" Content="Blackjack" FontSize="24" HorizontalAlignment="Left" Margin="195,460,0,0" VerticalAlignment="Top" Width="204" Height="68" FontFamily="SimSun" Background="#4c7f7f" Click="Blackjack_Click"/>
-        <Button Name="btnPoker" Content="Poker" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="423,460,0,0" VerticalAlignment="Top" Width="204" Height="68" Background="#4c7f7f" Click="Poker_Click"/>
-        <Button Name="btnGoFish" Content="Go Fish" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="650,460,0,0" VerticalAlignment="Top" Width="205" Height="68" Background="#4c7f7f" Opacity="0.5" Click="GoFish_Click"/>
-        <Button Name="btnWar" Content="War" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="881,460,0,0" VerticalAlignment="Top" Width="204" Height="68" RenderTransformOrigin="1.49,1.106" Background="#4c7f7f" Opacity="0.5" Click="War_Click"/>
+        <Button Name="btnHelp" Content="?" HorizontalAlignment="Left" FontFamily="SimSun" FontSize="28" Margin="596,577,0,0" VerticalAlignment="Top" Width="83" Height="75" Click="Help_Click" Background="#4c7f7f"/>
+        <Button Name="btnBlackjack" Content="Blackjack" FontSize="24" HorizontalAlignment="Left" Margin="195,460,0,0" VerticalAlignment="Top" Width="204" Height="68" FontFamily="SimSun" Background="#4c7f7f" Click="GameButton_Click"/>
+        <Button Name="btnPoker" Content="Poker" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="423,460,0,0" VerticalAlignment="Top" Width="204" Height="68" Background="#4c7f7f" Click="GameButton_Click"/>
+        <Button Name="btnGoFish" Content="Go Fish" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="650,460,0,0" VerticalAlignment="Top" Width="205" Height="68" Background="#4c7f7f" Opacity="0.5" Click="GameButton_Click"/>
+        <Button Name="btnWar" Content="War" FontSize="24" FontFamily="SimSun" HorizontalAlignment="Left" Margin="881,460,0,0" VerticalAlignment="Top" Width="204" Height="68" RenderTransformOrigin="1.49,1.106" Background="#4c7f7f" Opacity="0.5" Click="GameButton_Click"/>
         <Label Content="Coming Soon!!!" HorizontalAlignment="Left" FontSize="20" Margin="683,423,0,0" VerticalAlignment="Top" Height="37" Width="145"/>
         <Label Content="Coming Soon!!!" HorizontalAlignment="Left" FontSize="20" Margin="909,423,0,0" VerticalAlignment="Top" Height="37" Width="146"/>
         <Label x:Name="lbTitle_Copy" Content="Card Games" FontSize="122" HorizontalAlignment="Left" Margin="212,136,0,0" VerticalAlignment="Top" Height="220" Width="856" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo"/>
-        
+
     </Grid>
 </UserControl>

@@ -19,13 +19,15 @@ namespace CardGames.CardGames_UCs.GameModesUC
     /// <summary>
     /// Interaction logic for PokerUC.xaml
     /// </summary>
-    public partial class PokerUC : UserControl
+    public partial class PokerUC : UserControl, IButtonClicked
     {
-        PokerController controller = new PokerController();
-        public PokerUC()
+        public event ButtonClicked GameButtonClicked;
+        public PokerUC(List<string> names)
         {
             InitializeComponent();
         }
+
+        PokerController controller = new PokerController();
 
         public void NewGame(List<string> names)
         {

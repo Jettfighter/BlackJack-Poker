@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:CardGames"
         mc:Ignorable="d"
         Title="Card Games OwO" ResizeMode="NoResize" Height="720" Width="1280" Background="DarkSlateGray">
-    <Grid Name="mainWindow">
+    <Grid Name="MainGrid">
     </Grid>
 </Window>

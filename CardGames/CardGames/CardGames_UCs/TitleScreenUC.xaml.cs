@@ -19,52 +19,22 @@ namespace CardGames.CardGames_UCs
     /// <summary>
     /// Interaction logic for TitleScreenUC.xaml
     /// </summary>
-    public partial class TitleScreenUC : UserControl
+    public partial class TitleScreenUC : UserControl, IButtonClicked
     {
-        internal MainWindow window;
-
+        public event ButtonClicked GameButtonClicked;
         public TitleScreenUC()
         {
             InitializeComponent();
         }
 
-        private MainWindow getWindow()
+        private void GameButton_Click(object sender, RoutedEventArgs e)
         {
-            return Application.Current.MainWindow as MainWindow;
-        }
-
-        private void Start_Click(object sender, RoutedEventArgs e)
-        {
-            window.StartGame();
+            GameButtonClicked?.Invoke(((Button)sender).Name);
         }
 
         private void Help_Click(object sender, RoutedEventArgs e)
         {
-            // Null
-        }
 
-        private void Blackjack_Click(object sender, RoutedEventArgs e)
-        {
-            window = getWindow();
-            window.GameMode(sender, e);
-        }
-
-        private void Poker_Click(object sender, RoutedEventArgs e)
-        {
-            window = getWindow();
-            window.GameMode(sender, e);
-        }
-
-        private void GoFish_Click(object sender, RoutedEventArgs e)
-        {
-            window = getWindow();
-            window.GameMode(sender, e);
-        }
-
-        private void War_Click(object sender, RoutedEventArgs e)
-        {
-            window = getWindow();
-            window.GameMode(sender, e);
         }
     }
 }
