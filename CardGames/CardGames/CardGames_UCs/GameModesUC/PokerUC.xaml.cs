@@ -33,29 +33,34 @@ namespace CardGames.CardGames_UCs.GameModesUC
         public void NewGame(List<string> names)
         {
             PokerController.NewGame(names);
+            GetPlayerInfo();
         }
 
-        public void GetPlayerInfo()
+        private void GetPlayerInfo()
         {
-
+            lbBank.Content = $"Amount in Bank: {PokerController.GetBank()}.";
+            lbPot.Content = $"Amount in Pot: {PokerController.GetPot()}.";
         }
 
-        public void NextPhase()
+        private void NextPhase()
         {
-            
 
-            if(Flop)
+            if (PokerController.NextPhase())
             {
+                if(Flop)
+                {
 
-            }
-            else if (Turn)
-            {
+                }
+                else if (Turn)
+                {
 
-            }
-            else if (River)
-            {
+                }
+                else if (River)
+                {
 
+                }
             }
+
         }
 
         private void Bet_Click(object sender, RoutedEventArgs e)
@@ -65,7 +70,9 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         private void Call_Click(object sender, RoutedEventArgs e)
         {
-
+            PokerController.Call();
+            NextPhase();
+            GetPlayerInfo();
         }
 
         private void Raise_Click(object sender, RoutedEventArgs e)

@@ -67,7 +67,14 @@ namespace CardGameLib.Controllers
 
         public static bool NextPhase()
         {
+            bool done = false;
 
+            if(Players[PlayerCounter].AmountBet == CurrentBet)
+            {
+                done = true;
+            }
+
+            return done;
         }
 
         public static int GetBank()
