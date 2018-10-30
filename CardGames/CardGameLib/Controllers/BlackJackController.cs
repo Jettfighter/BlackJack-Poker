@@ -97,11 +97,12 @@ namespace CardGameLib.Controllers
             return isBusted;
         }
 
-        public static void PlayerBet(string playerName, int amount)
+        public static int PlayerBet(string playerName, int amount)
         {
             BlackjackPlayer player = blackjack.GetPlayer(playerName);
             player.FirstBet = amount;
             player.Bank -= amount;
+            return player.Bank;
         }
 
         public static bool CheckTwentyOne(string player)
