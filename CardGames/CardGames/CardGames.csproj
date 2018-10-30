@@ -95,6 +95,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ButtonClickEvents.cs" />
     <Compile Include="CardGames_UCs\GameModesUC\BlackjackUC.xaml.cs">
       <DependentUpon>BlackjackUC.xaml</DependentUpon>
     </Compile>

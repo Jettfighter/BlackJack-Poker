@@ -46,8 +46,10 @@ namespace CardGameLib.Controllers
             return players;
         }
 
-        public static bool CheckTwentyOne(List<Card> hand)
+        public static bool CheckTwentyOne(string player)
         {
+            Player p = blackjack.GetPlayer(player);
+            List<Card> hand = p.Hand;
             bool isTwentyOne = false;
             int total = 0;
 
@@ -61,8 +63,10 @@ namespace CardGameLib.Controllers
             return isTwentyOne;
         }
 
-        public static bool CheckNatural(List<Card> hand)
+        public static bool CheckNatural(string player)
         {
+            Player p = blackjack.GetPlayer(player);
+            List<Card> hand = p.Hand;
             bool isNatural = false;
 
             int total = 0;
@@ -95,13 +99,14 @@ namespace CardGameLib.Controllers
 
         }
 
-        public static bool SplittingPairs(BlackjackPlayer player)
+        public static bool SplittingPairs(string player)
         {
-            if (player.Hand.Count == 2)
-            {
+            Player p = blackjack.GetPlayer(player);
+            
+            bool splitting = (p.Hand.Count == 2 &&
+                              p.Hand.ToArray()[0].Value == p.Hand.ToArray()[1].Value);
 
-            }
-            return false;
+            return splitting;
         }
 
         public static bool CanDoubleDown(string name) 

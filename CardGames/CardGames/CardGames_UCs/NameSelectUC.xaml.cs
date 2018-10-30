@@ -18,20 +18,16 @@ namespace CardGames.CardGames_UCs
     /// <summary>
     /// Interaction logic for NameSelectUC.xaml
     /// </summary>
-    public partial class NameSelectUC : UserControl
+    public partial class NameSelectUC : UserControl, IButtonClicked
     {
-        internal MainWindow window;
-
-        public NameSelectUC()
+        public event ButtonClicked GameButtonClicked;
+        public event GameStarting GameStarting;
+        public NameSelectUC(int min, int max)
         {
             InitializeComponent();
+            sNumPlay.Minimum = min;
+            sNumPlay.Maximum = max;
         }
-
-        private void MainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            window.MainMenu();
-        }
-
         private void Go_Click(object sender, RoutedEventArgs e)
         {
             List<string> names = null;
@@ -40,7 +36,8 @@ namespace CardGames.CardGames_UCs
                    .Where(texbox => texbox.Name.StartsWith("tbxP"))
                    .Select(texbox => texbox.Text).ToList<string>();
 
-            window.Go(names);
+            GameStarting?.Invoke(names);
+
         }
 
         private void NumberOfPlayers_Slider(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -67,6 +64,11 @@ namespace CardGames.CardGames_UCs
                     Margin = new Thickness(8)
                 });
             }
+        }
+
+        private void MainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            GameButtonClicked?.Invoke(((Button)sender).Name);
         }
     }
 }

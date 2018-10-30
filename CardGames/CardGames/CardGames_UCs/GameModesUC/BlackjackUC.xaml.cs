@@ -18,15 +18,16 @@ namespace CardGames.CardGames_UCs.GameModesUC
     /// <summary>
     /// Interaction logic for BlackjackUC.xaml
     /// </summary>
-    public partial class BlackjackUC : UserControl
+    public partial class BlackjackUC : UserControl, IButtonClicked
     {
+        public event ButtonClicked GameButtonClicked;
+
         public List<Label> PlayerNameDisplays = new List<Label>();
 
         public List<Label> PlayerBankDisplays = new List<Label>();
 
         public List<StackPanel> PlayerHandDisplays = new List<StackPanel>();
-
-        public BlackjackUC()
+        public BlackjackUC(List<string> names)
         {
             InitializeComponent();
         }
@@ -65,5 +66,7 @@ namespace CardGames.CardGames_UCs.GameModesUC
             PlayerHandDisplays.Add(Player4Hand);
             PlayerHandDisplays.Add(Player5Hand);
         }
+
+
     }
 }
