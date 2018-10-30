@@ -40,10 +40,31 @@ namespace CardGameLib.Controllers
                 {
                     Name = playerNames[i],
                     Bank = 100,
-                    BoughtIn = false
+                    BoughtIn = false,
+                    DoubledDown = false,
+                    SecondHandInitiated=false
                 };
             }
             return players;
+        }
+        public static void StartGame(string[] playerNames)
+        {
+            blackjack = new Blackjack(ConvertPlayerToBlackjackPlayer(playerNames));
+            round = 1;
+
+            //give out the first card to each player
+            foreach (var player in blackjack.GetAllPlayers())
+            {
+                player.Hand.Add(blackjack.Deck.GetCard());
+            }
+            house.Hand.Add(blackjack.Deck.GetCard());
+
+            //give out the second card to each player
+            foreach (var player in blackjack.GetAllPlayers())
+            {
+                player.Hand.Add(blackjack.Deck.GetCard());
+            }
+            house.Hand.Add(blackjack.Deck.GetCard());
         }
 
         public static bool CheckTwentyOne(string player)
@@ -81,11 +102,6 @@ namespace CardGameLib.Controllers
             return isNatural;
         }
 
-        public static void StartGame(string[] playerNames)
-        {
-            blackjack = new Blackjack(ConvertPlayerToBlackjackPlayer(playerNames));
-            round = 1;
-        }
 
         public static bool TakeTurn(bool hitMe, string playerName)
         {
@@ -108,43 +124,45 @@ namespace CardGameLib.Controllers
 
             return splitting;
         }
-
-        public static void SplitPair(string player)
+        
+        public static bool CanDoubleDown(string name) 
         {
-            Player p = blackjack.GetPlayer(player);
-            List<Card> hand = p.Hand;
-
-
-        }
-
-        public static bool DoublingDown(string name)
-        {
-            bool successful = false;
+            bool possible = false;
             BlackjackPlayer player = blackjack.GetPlayer(name);
             if (round == 1 && player.Hand.Count == 2)
             {
                 int total = 0;
                 foreach (var card in player.Hand)
                 {
-                    if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J')
-                    {
-                        total += 10;
-                    }
-                    else if (card.Value == 'A')
+                    if(card.Value=='A')
                     {
                         total += 1;
                     }
-                    else if (card.Value > '0' && card.Value <= '9')
+                    else
                     {
-                        total += card.Value - 48;
+                        total += ConvertValue(card);
                     }
                 }
                 if (total >= 9 && total <= 11)
                 {
-                    successful = true;
+                    possible = true;
                 }
             }
 
+            return possible;
+        }
+
+        public static bool DoublingDown(string name)
+        {
+            bool successful = CanDoubleDown(name);
+            if(successful)
+            {
+
+                BlackjackPlayer player = blackjack.GetPlayer(name);
+                player.FirstBet *= 2;
+                player.DoubledDown = true;
+                player.Hand.Add(blackjack.Deck.GetCard());
+            }
             return successful;
         }
     }
