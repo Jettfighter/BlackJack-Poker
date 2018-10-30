@@ -8,6 +8,7 @@ namespace CardGameLib.Models
 {
     class PokerPlayer : Player
     {
+        public int AmountBet { get; set; }
         public bool SmallBlind { get; set; }
         public bool BigBlind { get; set; }
         public bool Folded { get; set; }

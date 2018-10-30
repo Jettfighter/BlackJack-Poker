@@ -22,6 +22,9 @@ namespace CardGames.CardGames_UCs.GameModesUC
     public partial class PokerUC : UserControl, IButtonClicked
     {
         public event ButtonClicked GameButtonClicked;
+        private bool Flop;
+        private bool Turn;
+        private bool River;
 
         public PokerUC(List<string> names)
         {
@@ -31,6 +34,32 @@ namespace CardGames.CardGames_UCs.GameModesUC
         public void NewGame(List<string> names)
         {
             PokerController.NewGame(names);
+            GetPlayerInfo();
+        }
+
+        private void GetPlayerInfo()
+        {
+            lbBank.Content = $"Amount in Bank: {PokerController.GetBank()}.";
+            lbPot.Content = $"Amount in Pot: {PokerController.GetPot()}.";
+        }
+
+        private void NextPhase()
+        {
+            if (PokerController.NextPhase())
+            {
+                if(Flop)
+                {
+
+                }
+                else if (Turn)
+                {
+
+                }
+                else if (River)
+                {
+
+                }
+            }
         }
 
         private void Bet_Click(object sender, RoutedEventArgs e)
@@ -40,17 +69,19 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         private void Call_Click(object sender, RoutedEventArgs e)
         {
-
+            PokerController.Call();
+            NextPhase();
+            GetPlayerInfo();
         }
 
         private void Raise_Click(object sender, RoutedEventArgs e)
         {
-
+            //PokerController.Raise(0);
         }
 
         private void Fold_Click(object sender, RoutedEventArgs e)
         {
-
+            //PokerController.Fold();
         }
 
         private void All_In_Click(object sender, RoutedEventArgs e)
