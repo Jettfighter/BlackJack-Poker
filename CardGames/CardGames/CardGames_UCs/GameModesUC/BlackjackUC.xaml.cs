@@ -48,8 +48,30 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         private void ResetPlayers()
         {
-            //TODO: Update names
-            //TODO: Update player banks
+            for (int i = 5; i < NumPlayers; i--)
+            {
+                PlayerNameDisplays[i - 1].Content = "";
+                PlayerBankDisplays[i - 1].Content = "";
+                PlayerHandDisplays[i - 1].Children.Clear();
+
+                /*
+                 * trying a different way of clearing players
+                var NameElement = PlayerNameDisplays[i - 1];
+                ((Grid)NameElement.Parent).Children.Remove(NameElement);
+
+                var BankElement = PlayerBankDisplays[i - 1];
+                ((Grid)BankElement.Parent).Children.Remove(BankElement);
+
+                var HandElement = PlayerHandDisplays[i - 1];
+                ((Grid)HandElement.Parent).Children.Remove(HandElement);
+                */
+            }
+
+            for (int i = 0; i < NumPlayers; i++)
+            {
+                PlayerNameDisplays[i].Content = Players[i].Name;
+                PlayerBankDisplays[i].Content = $"${Players[i].Bank}";
+            }
             //TODO: Update bet amount - OPTIONAL
         }
 
@@ -73,23 +95,6 @@ namespace CardGames.CardGames_UCs.GameModesUC
             PlayerHandDisplays.Add(Player4Hand);
             PlayerHandDisplays.Add(Player5Hand);
 
-            for (int i = 5; i < NumPlayers; i--)
-            {
-                var NameElement = PlayerNameDisplays[i - 1];
-                ((Grid)NameElement.Parent).Children.Remove(NameElement);
-
-                var BankElement = PlayerBankDisplays[i - 1];
-                ((Grid)BankElement.Parent).Children.Remove(BankElement);
-
-                var HandElement = PlayerHandDisplays[i - 1];
-                ((Grid)HandElement.Parent).Children.Remove(HandElement);
-            }
-
-            for (int i = 0; i < NumPlayers; i++)
-            {
-                PlayerNameDisplays[i].Content = Players[i].Name;
-                PlayerBankDisplays[i].Content = $"${Players[i].Bank}";
-            }
         }
 
 
