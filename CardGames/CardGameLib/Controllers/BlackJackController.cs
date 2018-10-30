@@ -141,11 +141,17 @@ namespace CardGameLib.Controllers
             return isNatural;
         }
 
-        public static bool TakeTurn(bool hitMe, string playerName)
+        public static void TakeTurn(bool hitMe, string playerName, bool secondHand)
         {
-            bool yes = true;
-
-            return yes;
+            BlackjackPlayer player = blackjack.GetPlayer(playerName);
+            if(secondHand)
+            {
+                player.SecondHand.Add(blackjack.Deck.GetCard());
+            }
+            else
+            {
+                player.Hand.Add(blackjack.Deck.GetCard());
+            }
         }
 
         public static void HouseTurn()
