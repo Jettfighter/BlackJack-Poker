@@ -65,17 +65,17 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         private void Call_Click(object sender, RoutedEventArgs e)
         {
-
+            PokerController.Call();
         }
 
         private void Raise_Click(object sender, RoutedEventArgs e)
         {
-
+            PokerController.Raise(0);
         }
 
         private void Fold_Click(object sender, RoutedEventArgs e)
         {
-
+            PokerController.Fold();
         }
 
         private void All_In_Click(object sender, RoutedEventArgs e)
