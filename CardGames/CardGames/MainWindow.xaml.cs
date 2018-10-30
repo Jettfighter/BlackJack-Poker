@@ -25,7 +25,6 @@ namespace CardGames
     public partial class MainWindow : Window
     {
         private List<string> Names;
-
         private Game game;
 
         public MainWindow()
@@ -70,9 +69,9 @@ namespace CardGames
                 case Game.Poker:
                     AddUserControl(new PokerUC(names), true);
                     break;
-
             }
         }
+
         private void GameButtonClicked(string sender)
         {
             switch (sender)

@@ -22,16 +22,15 @@ namespace CardGames.CardGames_UCs.GameModesUC
     public partial class PokerUC : UserControl, IButtonClicked
     {
         public event ButtonClicked GameButtonClicked;
+
         public PokerUC(List<string> names)
         {
             InitializeComponent();
         }
 
-        PokerController controller = new PokerController();
-
         public void NewGame(List<string> names)
         {
-            controller.NewGame(names);
+            PokerController.NewGame(names);
         }
 
         private void Bet_Click(object sender, RoutedEventArgs e)
