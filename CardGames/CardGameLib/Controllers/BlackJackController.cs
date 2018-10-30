@@ -104,7 +104,7 @@ namespace CardGameLib.Controllers
             return false;
         }
 
-        public static bool DoublingDown(string name)
+        public static bool CanDoubleDown(string name) 
         {
             bool successful = false;
             BlackjackPlayer player = blackjack.GetPlayer(name);
@@ -113,17 +113,13 @@ namespace CardGameLib.Controllers
                 int total = 0;
                 foreach (var card in player.Hand)
                 {
-                    if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J')
-                    {
-                        total += 10;
-                    }
-                    else if (card.Value == 'A')
+                    if(card.Value=='A')
                     {
                         total += 1;
                     }
-                    else if (card.Value > '0' && card.Value <= '9')
+                    else
                     {
-                        total += card.Value - 48;
+                        total += ConvertValue(card);
                     }
                 }
                 if (total >= 9 && total <= 11)
@@ -132,6 +128,16 @@ namespace CardGameLib.Controllers
                 }
             }
 
+            return successful;
+        }
+
+        public static bool DoublingDown(string name)
+        {
+            bool successful = CanDoubleDown(name);
+            if(successful)
+            {
+                
+            }
             return successful;
         }
     }
