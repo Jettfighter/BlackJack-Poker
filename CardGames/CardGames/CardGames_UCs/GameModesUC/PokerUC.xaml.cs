@@ -27,11 +27,14 @@ namespace CardGames.CardGames_UCs.GameModesUC
             InitializeComponent();
         }
 
-        PokerController controller = new PokerController();
-
         public void NewGame(List<string> names)
         {
-            controller.NewGame(names);
+            PokerController.NewGame(names);
+        }
+
+        public void GetPlayerInfo()
+        {
+
         }
 
         private void Bet_Click(object sender, RoutedEventArgs e)

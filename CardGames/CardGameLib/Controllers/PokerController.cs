@@ -60,6 +60,16 @@ namespace CardGameLib.Controllers
             }
         }
 
+        public static int GetBank()
+        {
+            return Players[PlayerCounter].Bank;
+        }
+
+        public static int GetPot()
+        {
+            return Pot;
+        }
+
         public static void Fold()
         {
             Players[PlayerCounter].Folded = true;
