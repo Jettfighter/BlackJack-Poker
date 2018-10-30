@@ -42,7 +42,7 @@ namespace CardGameLib.Controllers
                     Bank = 100,
                     BoughtIn = false,
                     DoubledDown = false,
-                    SecondHandInitiated=false
+                    SecondHandInitiated = false
                 };
             }
             return players;
@@ -67,6 +67,43 @@ namespace CardGameLib.Controllers
             house.Hand.Add(blackjack.Deck.GetCard());
         }
 
+        public static bool IsBusted(string playerName, bool secondHandCheck)
+        {
+            BlackjackPlayer player = blackjack.GetPlayer(playerName);
+            bool isBusted = false;
+
+            int total = 0;
+            bool hasAce = false;
+
+            foreach (Card card in secondHandCheck ? player.SecondHand : player.Hand)
+            {
+                if (card.Value == 'A')
+                {
+                    hasAce = true;
+                }
+                total += ConvertValue(card);
+            }
+
+            if (total > 21 && hasAce)
+            {
+                total -= 10;
+            }
+
+            if (total > 21)
+            {
+                isBusted = true;
+            }
+
+            return isBusted;
+        }
+
+        public static void PlayerBet(string playerName, int amount)
+        {
+            BlackjackPlayer player = blackjack.GetPlayer(playerName);
+            player.FirstBet = amount;
+            player.Bank -= amount;
+        }
+
         public static bool CheckTwentyOne(string player)
         {
             Player p = blackjack.GetPlayer(player);
@@ -83,6 +120,8 @@ namespace CardGameLib.Controllers
 
             return isTwentyOne;
         }
+
+
 
         public static bool CheckNatural(string player)
         {
@@ -102,7 +141,6 @@ namespace CardGameLib.Controllers
             return isNatural;
         }
 
-
         public static bool TakeTurn(bool hitMe, string playerName)
         {
             bool yes = true;
@@ -112,20 +150,47 @@ namespace CardGameLib.Controllers
 
         public static void HouseTurn()
         {
+            int houseTotal = 0;
+            bool hasAce = false;
+
+            foreach (Card card in house.Hand)
+            {
+                if (card.Value == 'A')
+                {
+                    hasAce = true;
+                }
+                houseTotal += ConvertValue(card);
+            }
+
+            if (houseTotal > 21 && hasAce)
+            {
+                houseTotal -= 10;
+            }
+
+            while (houseTotal < 17)
+            {
+                Card card = blackjack.Deck.GetCard();
+                house.Hand.Add(card);
+                houseTotal += ConvertValue(card);
+                if (houseTotal > 21 && card.Value == 'A')
+                {
+                    houseTotal -= 10;
+                }
+            }
 
         }
 
         public static bool CanSplitPairs(string player)
         {
             Player p = blackjack.GetPlayer(player);
-            
+
             bool splitting = (p.Hand.Count == 2 &&
                               p.Hand.ToArray()[0].Value == p.Hand.ToArray()[1].Value);
 
             return splitting;
         }
-        
-        public static bool CanDoubleDown(string name) 
+
+        public static bool CanDoubleDown(string name)
         {
             bool possible = false;
             BlackjackPlayer player = blackjack.GetPlayer(name);
@@ -134,7 +199,7 @@ namespace CardGameLib.Controllers
                 int total = 0;
                 foreach (var card in player.Hand)
                 {
-                    if(card.Value=='A')
+                    if (card.Value == 'A')
                     {
                         total += 1;
                     }
@@ -155,7 +220,7 @@ namespace CardGameLib.Controllers
         public static bool DoublingDown(string name)
         {
             bool successful = CanDoubleDown(name);
-            if(successful)
+            if (successful)
             {
 
                 BlackjackPlayer player = blackjack.GetPlayer(name);
