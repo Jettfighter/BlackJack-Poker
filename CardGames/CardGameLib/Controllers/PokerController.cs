@@ -7,23 +7,23 @@ using CardGameLib.Models;
 
 namespace CardGameLib.Controllers
 {
-    public class PokerController
+    public static  class PokerController
     {
-        private Deck Deck = new Deck();
-        private List<PokerPlayer> Players = new List<PokerPlayer>();
+        private static Deck Deck = new Deck();
+        private static List<PokerPlayer> Players = new List<PokerPlayer>();
 
-        private int Pot = 0;
-        private int Blind = 4;
-        private int CurrentBet = 0;
+        private static int Pot = 0;
+        private static int Blind = 4;
+        private static int CurrentBet = 0;
 
         //This variable determines which player's turn it is
-        private int PlayerCounter = 0;
+        private static int PlayerCounter = 0;
 
-        public Player CurrentPlayer { get; set; }
+        public static Player CurrentPlayer { get; set; }
 
         //In the window when the number of players and player names are determined
         //Player names can be added to a list<string> which will be passed into NewGame to determine number of players and player names.
-        public void NewGame(List<string> PlayerNames)
+        public static void NewGame(List<string> PlayerNames)
         {
             foreach(string name in PlayerNames)
             {
@@ -48,7 +48,7 @@ namespace CardGameLib.Controllers
         }
 
         //
-        private void IncrementCounter()
+        private static void IncrementCounter()
         {
             if(PlayerCounter == Players.Count)
             {
@@ -60,20 +60,20 @@ namespace CardGameLib.Controllers
             }
         }
 
-        public void Fold()
+        public static void Fold()
         {
             Players[PlayerCounter].Folded = true;
             IncrementCounter();
         }
 
-        public void Call()
+        public static void Call()
         {
             Players[PlayerCounter].Bank -= CurrentBet;
             Pot += CurrentBet;
             IncrementCounter();
         }
 
-        public void Raise(int raise)
+        public static void Raise(int raise)
         {
             CurrentBet += raise;
             Players[PlayerCounter].Bank -= CurrentBet;
