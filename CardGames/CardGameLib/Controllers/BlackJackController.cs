@@ -123,9 +123,7 @@ namespace CardGameLib.Controllers
 
             return isTwentyOne;
         }
-
-
-
+        
         public static bool CheckNatural(string player)
         {
             Player p = blackjack.GetPlayer(player);
@@ -198,8 +196,7 @@ namespace CardGameLib.Controllers
 
             return splitting;
         }
-
-
+        
         public static void SplitPairs(string player)
         {
             BlackjackPlayer p = blackjack.GetPlayer(player);

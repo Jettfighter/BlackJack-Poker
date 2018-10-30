@@ -44,6 +44,7 @@ namespace CardGames.CardGames_UCs.GameModesUC
             PreparePlayerElements();
             ResetPlayers();
 
+            ConvertToPicture(new Card('2', "Hearts"));
         }
 
         private void ResetPlayers()
@@ -97,6 +98,43 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         }
 
+        public void UpdateHands()
+        {
+            for (int i = 0; i < NumPlayers; i++)
+            {
+                PlayerHandDisplays[i].Children.Clear();
 
+                int numCards = BlackJackController.blackjack.GetAllPlayers()[i].Hand.Count;
+                for (int j = 0; j < numCards; j++)
+                {
+                     var pic = ConvertToPicture(BlackJackController.blackjack.GetAllPlayers()[i].Hand[j]);
+                    PlayerHandDisplays[i].Children.Add(pic);
+                }
+            }
+        }
+
+        private Image ConvertToPicture(Card card)
+        {
+            Image pic = new Image();
+
+            string extention = "";
+
+            extention += card.Value;
+            extention += card.Suit[0];
+            Console.WriteLine(extention);
+
+            BitmapImage b = new BitmapImage();
+            b.BeginInit();
+            b.UriSource = new Uri($"C:\\Source\\BlackJack-Poker\\CardGames\\CardGames\\Resources\\{extention}.png", UriKind.RelativeOrAbsolute);
+            b.EndInit();
+
+            pic.Source = b;
+            pic.Height = 80;
+
+            //test, remove later
+            DealerHand.Children.Add(pic);
+            
+            return pic;
+        }
     }
 }
