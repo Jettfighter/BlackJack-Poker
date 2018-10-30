@@ -7,9 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <Grid>
-        <Button x:Name="btnMainMenu" Content="Main Menu" FontFamily="SimSun" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" Height="61" FontSize="32" Margin="668,607,0,0" RenderTransformOrigin="3.004,5.111" Click="MainMenu_Click" Background="#4c7f7f"/>
-        <Button x:Name="btnPlayAgain" Content="New Game" FontFamily="SimSun" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" Height="61" FontSize="32" Margin="944,607,0,0" RenderTransformOrigin="3.004,5.111" Click="PlayAgain_Click" Background="#4c7f7f"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" FontFamily="SimSun" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" Height="61" FontSize="32" Margin="372,602,0,0" RenderTransformOrigin="3.004,5.111" Click="MainMenu_Click" Background="#4c7f7f"/>
+        <Button x:Name="btnPlayAgain" Content="New Game" FontFamily="SimSun" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" Height="61" FontSize="32" Margin="648,602,0,0" RenderTransformOrigin="3.004,5.111" Click="PlayAgain_Click" Background="#4c7f7f"/>
         <Grid Name="gCardArea" Margin="217,63,201,123"/>
-        <Label Name="lbPlayerLabel" Content="Player 1's turn." FontSize="40" FontFamily="SimSun" HorizontalAlignment="Left" Margin="92,607,0,0" VerticalAlignment="Top" Height="70" Width="338" />
     </Grid>
 </UserControl>
