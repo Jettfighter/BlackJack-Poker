@@ -30,7 +30,9 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         public List<StackPanel> PlayerHandDisplays = new List<StackPanel>();
 
-        public int NumPlayers = BlackJackController.blackjack.GetAllPlayers().Count();
+        private int NumPlayers = BlackJackController.blackjack.GetAllPlayers().Count();
+
+        private int playerTurn = 4;
 
         Player[] Players = BlackJackController.blackjack.GetAllPlayers();
 
@@ -43,28 +45,17 @@ namespace CardGames.CardGames_UCs.GameModesUC
         {
             PreparePlayerElements();
             ResetPlayers();
-
+            playerTurn = NumPlayers - 1;
         }
 
         private void ResetPlayers()
         {
-            for (int i = 5; i < NumPlayers; i--)
+            for (int i = 5; i > NumPlayers; i--)
             {
                 PlayerNameDisplays[i - 1].Content = "";
                 PlayerBankDisplays[i - 1].Content = "";
                 PlayerHandDisplays[i - 1].Children.Clear();
-
-                /*
-                 * trying a different way of clearing players
-                var NameElement = PlayerNameDisplays[i - 1];
-                ((Grid)NameElement.Parent).Children.Remove(NameElement);
-
-                var BankElement = PlayerBankDisplays[i - 1];
-                ((Grid)BankElement.Parent).Children.Remove(BankElement);
-
-                var HandElement = PlayerHandDisplays[i - 1];
-                ((Grid)HandElement.Parent).Children.Remove(HandElement);
-                */
+                
             }
 
             for (int i = 0; i < NumPlayers; i++)
@@ -73,6 +64,36 @@ namespace CardGames.CardGames_UCs.GameModesUC
                 PlayerBankDisplays[i].Content = $"${Players[i].Bank}";
             }
             //TODO: Update bet amount - OPTIONAL
+        }
+        private void BetButton_Click(object sender, RoutedEventArgs e)
+        {
+            int bet = 0;
+            if(((Button)sender).Content.ToString()=="$1")
+            {
+                bet = 1;
+            }
+            else if (((Button)sender).Content.ToString() == "$5")
+            {
+                bet = 5;
+            }
+            else if (((Button)sender).Content.ToString() == "$10")
+            {
+                bet = 10;
+            }
+            PlayerBankDisplays[playerTurn].Content = BlackJackController.PlayerBet(PlayerNameDisplays[playerTurn].Content.ToString(), bet);
+            HitButton.Visibility = Visibility.Visible;
+            DoubleDownButton.Visibility = Visibility.Visible;
+            StandButton.Visibility = Visibility.Visible;
+            SplitButton.Visibility = Visibility.Visible;
+
+            HitButton.IsEnabled = true;
+            DoubleDownButton.IsEnabled = true;
+            StandButton.IsEnabled = true;
+            SplitButton.IsEnabled = true;
+
+            D1Button.Visibility = Visibility.Hidden;
+            D5Button.Visibility = Visibility.Hidden;
+            D10Button.Visibility = Visibility.Hidden;
         }
 
         private void PreparePlayerElements()
@@ -97,6 +118,31 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
         }
 
+        private void StandButton_Click(object sender, RoutedEventArgs e)
+        {
+            playerTurn--;
 
+            if(playerTurn<0)
+            {
+                HitButton.Visibility = Visibility.Hidden;
+                DoubleDownButton.Visibility = Visibility.Hidden;
+                StandButton.Visibility = Visibility.Hidden;
+                SplitButton.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                HitButton.Visibility = Visibility.Hidden;
+                DoubleDownButton.Visibility = Visibility.Hidden;
+                StandButton.Visibility = Visibility.Hidden;
+                SplitButton.Visibility = Visibility.Hidden;
+
+                D1Button.Visibility = Visibility.Visible;
+                D5Button.Visibility = Visibility.Visible;
+                D10Button.Visibility = Visibility.Visible;
+            }
+
+            
+
+        }
     }
 }

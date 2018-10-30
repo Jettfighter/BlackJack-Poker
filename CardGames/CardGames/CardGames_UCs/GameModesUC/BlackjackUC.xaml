@@ -42,10 +42,13 @@
 
         <Label Name="BetLabel" Content="Bet: $1" HorizontalAlignment="Left" Margin="255,184,0,0" VerticalAlignment="Top" Width="68"/>
 
-        <Button Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="167,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black"/>
-        <Button Name="DoubleDownButton" Content="Double Down" HorizontalAlignment="Left" Margin="313,369,0,0" VerticalAlignment="Top" Width="93" Height="34" IsEnabled="False" Background="White" Foreground="Black"/>
-        <Button Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="240,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black"/>
-        <Button Name="SplitButton" Content="Split" HorizontalAlignment="Left" Margin="412,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black"/>
+        <Button Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="167,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden"/>
+        <Button Name="DoubleDownButton" Content="Double Down" HorizontalAlignment="Left" Margin="313,369,0,0" VerticalAlignment="Top" Width="93" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden"/>
+        <Button Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="240,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="StandButton_Click"/>
+        <Button Name="SplitButton" Content="Split" HorizontalAlignment="Left" Margin="412,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden"/>
+        <Button x:Name="D1Button" Content="$1" HorizontalAlignment="Left" Margin="693,133,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
+        <Button x:Name="D5Button" Content="$5" HorizontalAlignment="Left" Margin="693,188,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
+        <Button x:Name="D10Button" Content="$10" HorizontalAlignment="Left" Margin="693,241,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
 
     </Grid>
 </UserControl>
