@@ -55,7 +55,7 @@ namespace CardGameLib.Controllers
 
             foreach (Card c in hand)
             {
-                total += c.Value;
+                total += ConvertValue(c);
             }
 
             isTwentyOne = (total == 21 && hand.Count > 2);
@@ -73,7 +73,7 @@ namespace CardGameLib.Controllers
 
             foreach (Card c in hand)
             {
-                total += c.Value;
+                total += ConvertValue(c);
             }
 
             isNatural = (total == 21 && hand.Count == 2);
@@ -99,7 +99,7 @@ namespace CardGameLib.Controllers
 
         }
 
-        public static bool SplittingPairs(string player)
+        public static bool CanSplitPairs(string player)
         {
             Player p = blackjack.GetPlayer(player);
             
@@ -107,6 +107,14 @@ namespace CardGameLib.Controllers
                               p.Hand.ToArray()[0].Value == p.Hand.ToArray()[1].Value);
 
             return splitting;
+        }
+
+        public static void SplitPair(string player)
+        {
+            Player p = blackjack.GetPlayer(player);
+            List<Card> hand = p.Hand;
+
+
         }
 
         public static bool DoublingDown(string name)
