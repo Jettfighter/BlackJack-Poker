@@ -13,6 +13,7 @@ namespace CardGameLib.Models
         public int SecondBet { get; set; }
         public bool SecondHandInitiated { get; set; } 
         public bool BoughtIn { get; set; }
+        public int HitLimit { get; set; }
         public bool DoubledDown { get; set; }
 
     }

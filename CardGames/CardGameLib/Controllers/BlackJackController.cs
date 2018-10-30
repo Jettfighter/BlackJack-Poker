@@ -117,12 +117,33 @@ namespace CardGameLib.Controllers
 
         public static bool CanSplitPairs(string player)
         {
-            Player p = blackjack.GetPlayer(player);
+            BlackjackPlayer p = blackjack.GetPlayer(player);
             
             bool splitting = (p.Hand.Count == 2 &&
                               p.Hand.ToArray()[0].Value == p.Hand.ToArray()[1].Value);
 
             return splitting;
+        }
+
+        public static void SplitPairs(string player)
+        {
+            BlackjackPlayer p = blackjack.GetPlayer(player);
+            bool aces = (p.Hand.ToArray()[0].Value == 'A' && p.Hand.ToArray()[1].Value == 'A');
+            if (aces)
+            {
+                p.HitLimit = 1;
+            }
+
+            
+
+            p.SecondHand.Add(p.Hand.Last<Card>());
+            p.Hand.Remove(p.Hand.Last<Card>());
+
+            p.Hand.Add(blackjack.Deck.GetCard());
+            p.SecondHand.Add(blackjack.Deck.GetCard());
+
+            p.SecondBet = p.FirstBet;
+
         }
         
         public static bool CanDoubleDown(string name) 
