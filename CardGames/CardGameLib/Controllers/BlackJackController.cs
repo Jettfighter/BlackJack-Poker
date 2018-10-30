@@ -144,7 +144,7 @@ namespace CardGameLib.Controllers
             return isNatural;
         }
 
-        public static void TakeTurn(bool hitMe, string playerName, bool secondHand)
+        public static void HitMe(string playerName, bool secondHand)
         {
             BlackjackPlayer player = blackjack.GetPlayer(playerName);
             if(secondHand)

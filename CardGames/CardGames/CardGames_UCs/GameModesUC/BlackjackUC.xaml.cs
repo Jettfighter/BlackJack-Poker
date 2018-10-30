@@ -46,6 +46,7 @@ namespace CardGames.CardGames_UCs.GameModesUC
             PreparePlayerElements();
             ResetPlayers();
             playerTurn = NumPlayers - 1;
+            TurnLabel.Content = $"Turn: {GetCurrentPlayerName()}";
         }
 
         private void ResetPlayers()
@@ -80,11 +81,18 @@ namespace CardGames.CardGames_UCs.GameModesUC
             {
                 bet = 10;
             }
-            PlayerBankDisplays[playerTurn].Content = BlackJackController.PlayerBet(PlayerNameDisplays[playerTurn].Content.ToString(), bet);
+            string playerName = GetCurrentPlayerName();
+            PlayerBankDisplays[playerTurn].Content = $"${BlackJackController.PlayerBet(playerName, bet)}";
             HitButton.Visibility = Visibility.Visible;
-            DoubleDownButton.Visibility = Visibility.Visible;
             StandButton.Visibility = Visibility.Visible;
-            SplitButton.Visibility = Visibility.Visible;
+            if(BlackJackController.CanDoubleDown(playerName))
+            {
+                DoubleDownButton.Visibility = Visibility.Visible;
+            }
+            if(BlackJackController.CanSplitPairs(playerName))
+            {
+                SplitButton.Visibility = Visibility.Visible;
+            }
 
             HitButton.IsEnabled = true;
             DoubleDownButton.IsEnabled = true;
@@ -128,6 +136,8 @@ namespace CardGames.CardGames_UCs.GameModesUC
                 DoubleDownButton.Visibility = Visibility.Hidden;
                 StandButton.Visibility = Visibility.Hidden;
                 SplitButton.Visibility = Visibility.Hidden;
+
+                TurnLabel.Content = "Turn:";
             }
             else
             {
@@ -139,10 +149,43 @@ namespace CardGames.CardGames_UCs.GameModesUC
                 D1Button.Visibility = Visibility.Visible;
                 D5Button.Visibility = Visibility.Visible;
                 D10Button.Visibility = Visibility.Visible;
+
+                TurnLabel.Content = $"Turn: {PlayerNameDisplays[playerTurn].Content.ToString()}";
             }
 
             
 
+        }
+
+        private void SplitButton_Click(object sender, RoutedEventArgs e)
+        {
+            string playerName = GetCurrentPlayerName();
+
+        }
+
+        private void DoubleDownButton_Click(object sender, RoutedEventArgs e)
+        {
+            string playerName = GetCurrentPlayerName();
+            BlackJackController.DoublingDown(playerName);
+            StandButton_Click(sender, e);
+        }
+
+        private void HitButton_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleDownButton.Visibility = Visibility.Hidden;
+            SplitButton.Visibility = Visibility.Hidden;
+
+            string playerName = GetCurrentPlayerName();
+            BlackJackController.HitMe(playerName, false);
+            if(BlackJackController.IsBusted(playerName,false))
+            {
+                HitButton.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private string GetCurrentPlayerName()
+        {
+            return PlayerNameDisplays[playerTurn].Content.ToString();
         }
     }
 }
