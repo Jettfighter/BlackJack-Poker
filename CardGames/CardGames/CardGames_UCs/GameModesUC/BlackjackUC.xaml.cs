@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CardGameLib.Controllers;
+using CardGameLib.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +29,11 @@ namespace CardGames.CardGames_UCs.GameModesUC
         public List<Label> PlayerBankDisplays = new List<Label>();
 
         public List<StackPanel> PlayerHandDisplays = new List<StackPanel>();
+
+        public int NumPlayers = BlackJackController.blackjack.GetAllPlayers().Count();
+
+        Player[] Players = BlackJackController.blackjack.GetAllPlayers();
+
         public BlackjackUC(List<string> names)
         {
             InitializeComponent();
@@ -65,6 +72,24 @@ namespace CardGames.CardGames_UCs.GameModesUC
             PlayerHandDisplays.Add(Player3Hand);
             PlayerHandDisplays.Add(Player4Hand);
             PlayerHandDisplays.Add(Player5Hand);
+
+            for (int i = 5; i < NumPlayers; i--)
+            {
+                var NameElement = PlayerNameDisplays[i - 1];
+                ((Grid)NameElement.Parent).Children.Remove(NameElement);
+
+                var BankElement = PlayerBankDisplays[i - 1];
+                ((Grid)BankElement.Parent).Children.Remove(BankElement);
+
+                var HandElement = PlayerHandDisplays[i - 1];
+                ((Grid)HandElement.Parent).Children.Remove(HandElement);
+            }
+
+            for (int i = 0; i < NumPlayers; i++)
+            {
+                PlayerNameDisplays[i].Content = Players[i].Name;
+                PlayerBankDisplays[i].Content = $"${Players[i].Bank}";
+            }
         }
 
 
