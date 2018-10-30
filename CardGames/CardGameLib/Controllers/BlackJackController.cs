@@ -204,9 +204,7 @@ namespace CardGameLib.Controllers
             if (aces)
             {
                 p.HitLimit = 1;
-            }
-
-            
+            }          
 
             p.SecondHand.Add(p.Hand.Last<Card>());
             p.Hand.Remove(p.Hand.Last<Card>());

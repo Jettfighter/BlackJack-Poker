@@ -90,7 +90,6 @@ namespace CardGames
                     AddUserControl(new TitleScreenUC());
                     break;
             }
-
         }
     }
 }
