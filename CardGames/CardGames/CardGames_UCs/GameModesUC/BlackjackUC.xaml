@@ -14,28 +14,28 @@
 
         <StackPanel Name="DealerHand" HorizontalAlignment="Left" Height="82" Margin="345,133,0,0" VerticalAlignment="Top" Width="150"/>
 
-        <Label Name="Player1Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="364,289,0,0" VerticalAlignment="Top" />
-        <Label Name="Player1Name" Content="Player1" HorizontalAlignment="Left" Width="68" Margin="364,263,0,0" VerticalAlignment="Top" />
-        <StackPanel Name="Player1Hand" HorizontalAlignment="Left" Height="54" Margin="364,315,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Name="Player1Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="167,237,0,0" VerticalAlignment="Top" />
+        <Label Name="Player1Name" Content="Player1" HorizontalAlignment="Left" Width="68" Margin="167,211,0,0" VerticalAlignment="Top" />
+        <StackPanel Name="Player1Hand" HorizontalAlignment="Left" Height="54" Margin="150,263,0,0" VerticalAlignment="Top" Width="100"/>
 
         <StackPanel Name="Player2Hand" HorizontalAlignment="Left" Height="54" Margin="255,315,0,0" VerticalAlignment="Top" Width="100"/>
         <Label Name="Player2Name" Content="Player2" HorizontalAlignment="Left" Width="68" Margin="255,263,0,0" VerticalAlignment="Top" />
         <Label Name="Player2Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="255,289,0,0" VerticalAlignment="Top" />
 
 
-        <StackPanel Name="Player3Hand" HorizontalAlignment="Left" Height="54" Margin="480,315,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Name="Player3Name" Content="Player3" HorizontalAlignment="Left" Width="68" Margin="480,263,0,0" VerticalAlignment="Top" />
-        <Label Name="Player3Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="480,289,0,0" VerticalAlignment="Top" />
+        <StackPanel Name="Player3Hand" HorizontalAlignment="Left" Height="54" Margin="355,315,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Name="Player3Name" Content="Player3" HorizontalAlignment="Left" Width="68" Margin="355,263,0,0" VerticalAlignment="Top" />
+        <Label Name="Player3Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="355,289,0,0" VerticalAlignment="Top" />
 
 
-        <StackPanel Name="Player4Hand" HorizontalAlignment="Left" Height="54" Margin="593,278,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Name="Player4Name" Content="Player4" HorizontalAlignment="Left" Width="68" Margin="576,221,0,0" VerticalAlignment="Top" />
-        <Label Name="Player4Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="576,252,0,0" VerticalAlignment="Top" />
+        <StackPanel Name="Player4Hand" HorizontalAlignment="Left" Height="54" Margin="455,315,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Name="Player4Name" Content="Player4" HorizontalAlignment="Left" Width="68" Margin="455,260,0,0" VerticalAlignment="Top" />
+        <Label Name="Player4Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="455,286,0,0" VerticalAlignment="Top" />
 
 
-        <StackPanel Name="Player5Hand" HorizontalAlignment="Left"  Height="54" Margin="135,278,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Name="Player5Name" Content="Player5" HorizontalAlignment="Left" Width="68" Margin="167,221,0,0" VerticalAlignment="Top" />
-        <Label Name="Player5Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="167,252,0,0" VerticalAlignment="Top" />
+        <StackPanel Name="Player5Hand" HorizontalAlignment="Left"  Height="54" Margin="564,260,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Name="Player5Name" Content="Player5" HorizontalAlignment="Left" Width="68" Margin="564,211,0,0" VerticalAlignment="Top" />
+        <Label Name="Player5Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="564,237,0,0" VerticalAlignment="Top" />
 
 
         <Label Name="TurnLabel" Content="Turn:" HorizontalAlignment="Left" Margin="255,159,0,0" VerticalAlignment="Top" Width="68" Height="25"/>
