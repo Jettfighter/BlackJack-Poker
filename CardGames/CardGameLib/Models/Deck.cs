@@ -19,7 +19,7 @@ namespace CardGameLib.Models
             string suit = "";
             for (int i = 0; i < 4; i++)
             {
-                switch(i)
+                switch (i)
                 {
                     case 0:
                         suit = "Spades";
@@ -39,10 +39,14 @@ namespace CardGameLib.Models
                 for (int ii = 1; ii < 14; ii++)
                 {
                     Card card;
-                    switch(ii)
+                    switch (ii)
                     {
                         case 1:
                             card = new Card('A', suit);
+                            CardsInDeck.Add(card);
+                            break;
+                        case 10:
+                            card = new Card('X', suit);
                             CardsInDeck.Add(card);
                             break;
                         case 11:
@@ -80,7 +84,7 @@ namespace CardGameLib.Models
 
         public void Reshuffle()
         {
-            foreach(Card card in CardsPlayed)
+            foreach (Card card in CardsPlayed)
             {
                 CardsInDeck.Add(card);
                 CardsPlayed.Remove(card);

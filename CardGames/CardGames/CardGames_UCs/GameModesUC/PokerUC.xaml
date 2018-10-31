@@ -13,8 +13,8 @@
         <Image Name="com3" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="372,158,0,0" VerticalAlignment="Top" Width="61"/>
         <Image Name="com4" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="433,158,0,0" VerticalAlignment="Top" Width="61"/>
         <Image Name="com5" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="494,158,0,0" VerticalAlignment="Top" Width="61"/>
-        <Image Name="ph1" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="340,357,0,0" VerticalAlignment="Top" Width="62"/>
-        <Image Name="ph2" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="402,357,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.21,-0.856"/>
+        <Image Name="ph1" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="340,357,0,0" VerticalAlignment="Top" Width="62" MouseEnter="ShowCards" MouseLeave="HideCards"/>
+        <Image Name="ph2" HorizontalAlignment="Left" Source="/CardGames;component/Resources/gray_back.png" Height="93" Margin="402,357,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.21,-0.856" MouseEnter="ShowCards" MouseLeave="HideCards"/>
         <TextBox x:Name="txtBoxStatus" TextAlignment="Center" IsEnabled="False" Background="DarkSlateGray" HorizontalAlignment="Left" FontSize="25" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="60,10,0,0" VerticalAlignment="Top" Width="687" Height="49"/>
         <Button Name="btnBet" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Bet" HorizontalAlignment="Left" Margin="516,362,0,0" VerticalAlignment="Top" Width="113" Height="34" Click="Bet_Click"/>
         <Button x:Name="btnCall" FontSize="24" FontFamily="SimSun" Background="#4c7f7f" Content="Call" HorizontalAlignment="Left" Margin="634,362,0,0" VerticalAlignment="Top" Width="113" Height="34" Click="Call_Click"/>

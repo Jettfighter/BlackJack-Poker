@@ -133,39 +133,31 @@ namespace CardGames.CardGames_UCs.GameModesUC
                 if (!riverCardShowing)
                     ShowRiverCard();
             }
+            else if (PokerController.Round == Round.GameOver)
+            {
+                MessageBox.Show("winnder");
+            }
         }
 
         private void ShowFlopCards()
         {
             flopCardsShowing = true;
-            List<Image> images;
-            images = PokerGrid.Children.OfType<Image>()
-                .Where(image => image.Name == "com1" ||
-                                image.Name == "com2" ||
-                                image.Name == "com3").ToList<Image>();
 
-            foreach(var image in images)
-            {
-                image.Source = new BitmapImage(new Uri(GetRandomCardPath(), UriKind.Relative));
-            }
+            com1.Source = GetCardPath(PokerController.CommunityCards[0]);
+            com2.Source = GetCardPath(PokerController.CommunityCards[1]);
+            com3.Source = GetCardPath(PokerController.CommunityCards[2]);
         }
 
         private void ShowTurnCard()
         {
             turnCardShowing = true;
-            com4.Source = new BitmapImage(new Uri(GetRandomCardPath(), UriKind.Relative));
+            com4.Source = GetCardPath(PokerController.CommunityCards[3]);
         }
 
         private void ShowRiverCard()
         {
             riverCardShowing = true;
-            com5.Source = new BitmapImage(new Uri(GetRandomCardPath(), UriKind.Relative));
-        }
-
-        private string GetRandomCardPath()
-        {
-            var card = PokerController.Deck.GetCard();
-            return $"../../Resources/{card.Value}{card.Suit[0].ToString()}.png";
+            com5.Source = GetCardPath(PokerController.CommunityCards[4]);
         }
 
         private void Call_Click(object sender, RoutedEventArgs e)
@@ -195,6 +187,26 @@ namespace CardGames.CardGames_UCs.GameModesUC
         private void All_In_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ShowCards(object sender, MouseEventArgs e)
+        {
+            ph1.Source = GetCardPath(PokerController.CurrentPlayer.Hand[0]);
+            ph2.Source = GetCardPath(PokerController.CurrentPlayer.Hand[1]);
+        }
+
+        private BitmapImage GetCardPath(Card card)
+        {
+            string imagePath = $"../../Resources/{card.Value}{card.Suit[0].ToString()}.png";
+            return new BitmapImage(new Uri(imagePath, UriKind.Relative));
+        }
+
+        private void HideCards(object sender, MouseEventArgs e)
+        {
+            string imagePath = $"../../Resources/gray_back.png";
+            var image = new BitmapImage(new Uri(imagePath, UriKind.Relative));
+            ph1.Source = image;
+            ph2.Source = image;
         }
     }
 }

@@ -15,18 +15,21 @@ namespace CardGameLib.Controllers
     {
         public static Deck Deck = new Deck();
         private static List<PokerPlayer> Players = new List<PokerPlayer>();
+        public static List<Card> CommunityCards { get; set; } = new List<Card>();
 
         public static Round Round { get => s_round; set => s_round = value; }
 
         private static int Pot = 0;
         private static int Blind = 4;
         private static int CurrentBet = 0;
+        private static int numberOfCommunityCards = 5;
 
         //This variable determines which player's turn it is
         private static int PlayerCounter = 0;
         private static Round s_round;
 
         public static Player CurrentPlayer { get; set; }
+        public static Player WinningPlayer { get; set; }
 
         //In the window when the number of players and player names are determined
         //Player names can be added to a list<string> which will be passed into NewGame to determine number of players and player names.
@@ -54,8 +57,12 @@ namespace CardGameLib.Controllers
             CurrentPlayer = Players[0];
             Round = Round.Preflop;
 
-            //Players[0].SmallBlind = true;
-            //Players[1].BigBlind = true;
+            for (int i = 0; i < numberOfCommunityCards; i++)
+            {
+                CommunityCards.Add(Deck.GetCard());
+            }
+
+            WinningPlayer = PokerHandEvaluator.DetermineWinner(CommunityCards, Players);
         }
 
         private static void ResetGame()
@@ -70,24 +77,25 @@ namespace CardGameLib.Controllers
             CurrentPlayer = null;
         }
 
-        //
         public static void IncrementCounter()
         {
-            if (Players[PlayerCounter].Folded)
-            {
-                PlayerCounter++;
-            }
+            PlayerCounter++;
 
-            if (PlayerCounter == Players.Count - 1)
+            if (PlayerCounter == Players.Count)
             {
                 PlayerCounter = 0;
                 NextPhase();
             }
-            else
+
+            while (Players[PlayerCounter].Folded)
             {
                 PlayerCounter++;
+                if (PlayerCounter == Players.Count)
+                {
+                    PlayerCounter = 0;
+                    NextPhase();
+                }
             }
-
 
             CurrentPlayer = Players[PlayerCounter];
         }
@@ -142,6 +150,12 @@ namespace CardGameLib.Controllers
         {
             Players[PlayerCounter].Folded = true;
             IncrementCounter();
+
+            if (Players.Count == 1)
+            {
+                Round = Round.GameOver;
+                WinningPlayer = Players[0];
+            }
         }
 
         public static void Call()
@@ -185,6 +199,17 @@ namespace CardGameLib.Controllers
                 return true;
 
             return false;
+        }
+
+        public static bool CheckForWinner()
+        {
+
+            return false;
+        }
+
+        public static Player Winner()
+        {
+            return WinningPlayer;
         }
     }
 }

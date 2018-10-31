@@ -157,10 +157,10 @@
     <Resource Include="Resources\roland-huse-design_poker-in-october-demo\README-PokerInOctoberDemo.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\10C.png" />
-    <Resource Include="Resources\10D.png" />
-    <Resource Include="Resources\10H.png" />
-    <Resource Include="Resources\10S.png" />
+    <Resource Include="Resources\XC.png" />
+    <Resource Include="Resources\XD.png" />
+    <Resource Include="Resources\XH.png" />
+    <Resource Include="Resources\XS.png" />
     <Resource Include="Resources\2C.png" />
     <Resource Include="Resources\2D.png" />
     <Resource Include="Resources\2H.png" />
