@@ -9,44 +9,61 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid Name="GameGrid">
-        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/racetrackpokertable2.png" Height="269" Margin="135,100,0,0" VerticalAlignment="Top" Width="528"/>
-        <Label Content="DEALER" HorizontalAlignment="Left" FontSize="28" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="331,60,0,0" VerticalAlignment="Top" Width="147"/>
+        <Image HorizontalAlignment="Left" Source="/CardGames;component/Resources/racetrackpokertable2.png" Height="269" Margin="135,100,0,0" VerticalAlignment="Top" Width="528" Visibility="Visible"/>
+        <Label Foreground="White" Content="DEALER" HorizontalAlignment="Left" FontSize="28" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="331,60,0,0" VerticalAlignment="Top" Width="147"/>
 
-        <StackPanel Name="DealerHand" HorizontalAlignment="Left" Height="82" Margin="345,133,0,0" VerticalAlignment="Top" Width="150"/>
+        <StackPanel Name="DealerHand" HorizontalAlignment="Left" Height="60" Margin="345,133,0,0" VerticalAlignment="Top" Width="287" Orientation="Horizontal"/>
 
-        <Label Name="Player1Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="167,237,0,0" VerticalAlignment="Top" />
-        <Label Name="Player1Name" Content="Player1" HorizontalAlignment="Left" Width="68" Margin="167,211,0,0" VerticalAlignment="Top" />
-        <StackPanel Name="Player1Hand" HorizontalAlignment="Left" Height="54" Margin="150,263,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Foreground="White" Name="Player1Bank" Content="$100" HorizontalAlignment="Left" Width="36" Margin="167,237,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" Name="Player1Name" Content="Player1" HorizontalAlignment="Left" Width="68" Margin="167,211,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+        <StackPanel Name="Player1Hand" HorizontalAlignment="Left" Height="60" Margin="93,260,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <StackPanel x:Name="Player1HandContinued" HorizontalAlignment="Left" Height="60" Margin="93,325,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
 
-        <StackPanel Name="Player2Hand" HorizontalAlignment="Left" Height="54" Margin="255,315,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Name="Player2Name" Content="Player2" HorizontalAlignment="Left" Width="68" Margin="255,263,0,0" VerticalAlignment="Top" />
-        <Label Name="Player2Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="255,289,0,0" VerticalAlignment="Top" />
-
-
-        <StackPanel Name="Player3Hand" HorizontalAlignment="Left" Height="54" Margin="355,315,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Name="Player3Name" Content="Player3" HorizontalAlignment="Left" Width="68" Margin="355,263,0,0" VerticalAlignment="Top" />
-        <Label Name="Player3Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="355,289,0,0" VerticalAlignment="Top" />
+        <StackPanel Name="Player2Hand" HorizontalAlignment="Left" Height="60" Margin="216,315,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <StackPanel x:Name="Player2HandContinued" HorizontalAlignment="Left" Height="60" Margin="216,375,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <Label Foreground="White" Name="Player2Name" Content="Player2" HorizontalAlignment="Left" Width="68" Margin="255,263,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+        <Label Foreground="White" Name="Player2Bank" Content="$100" HorizontalAlignment="Left" Width="37" Margin="255,289,0,0" VerticalAlignment="Top" />
 
 
-        <StackPanel Name="Player4Hand" HorizontalAlignment="Left" Height="54" Margin="455,315,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Name="Player4Name" Content="Player4" HorizontalAlignment="Left" Width="68" Margin="455,260,0,0" VerticalAlignment="Top" />
-        <Label Name="Player4Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="455,286,0,0" VerticalAlignment="Top" />
+        <StackPanel Name="Player3Hand" HorizontalAlignment="Left" Height="60" Margin="339,315,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <StackPanel x:Name="Player3HandContinued" HorizontalAlignment="Left" Height="60" Margin="339,375,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <Label Foreground="White" Name="Player3Name" Content="Player3" HorizontalAlignment="Left" Width="68" Margin="355,263,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+        <Label Foreground="White" Name="Player3Bank" Content="$100" HorizontalAlignment="Left" Width="37" Margin="355,289,0,0" VerticalAlignment="Top" />
 
 
-        <StackPanel Name="Player5Hand" HorizontalAlignment="Left"  Height="54" Margin="564,260,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Name="Player5Name" Content="Player5" HorizontalAlignment="Left" Width="68" Margin="564,211,0,0" VerticalAlignment="Top" />
-        <Label Name="Player5Bank" Content="$0" HorizontalAlignment="Left" Width="68" Margin="564,237,0,0" VerticalAlignment="Top" />
+        <StackPanel Name="Player4Hand" HorizontalAlignment="Left" Height="60" Margin="462,315,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <StackPanel x:Name="Player4HandContinued" HorizontalAlignment="Left" Height="60" Margin="462,375,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <Label Foreground="White" Name="Player4Name" Content="Player4" HorizontalAlignment="Left" Width="68" Margin="455,260,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+        <Label Foreground="White" Name="Player4Bank" Content="$100" HorizontalAlignment="Left" Width="36" Margin="455,286,0,0" VerticalAlignment="Top" />
 
 
-        <Label Name="TurnLabel" Content="Turn:" HorizontalAlignment="Left" Margin="255,159,0,0" VerticalAlignment="Top" Width="143" Height="25"/>
+        <StackPanel Name="Player5Hand" HorizontalAlignment="Left"  Height="60" Margin="585,260,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <StackPanel x:Name="Player5HandContinued" HorizontalAlignment="Left"  Height="60" Margin="586,325,0,0" VerticalAlignment="Top" Width="118" Orientation="Horizontal"/>
+        <Label Foreground="White" Name="Player5Name" Content="Player5" HorizontalAlignment="Left" Width="68" Margin="540,211,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+        <Label Foreground="White" Name="Player5Bank" Content="$100" HorizontalAlignment="Left" Width="36" Margin="550,237,0,0" VerticalAlignment="Top" />
 
-        <Button Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="167,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="HitButton_Click"/>
-        <Button Name="DoubleDownButton" Content="Double Down" HorizontalAlignment="Left" Margin="313,369,0,0" VerticalAlignment="Top" Width="93" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="DoubleDownButton_Click"/>
-        <Button Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="240,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="StandButton_Click"/>
-        <Button Name="SplitButton" Content="Split" HorizontalAlignment="Left" Margin="412,369,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="SplitButton_Click"/>
-        <Button x:Name="D1Button" Content="$1" HorizontalAlignment="Left" Margin="693,133,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
-        <Button x:Name="D5Button" Content="$5" HorizontalAlignment="Left" Margin="693,188,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
-        <Button x:Name="D10Button" Content="$10" HorizontalAlignment="Left" Margin="693,241,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
+
+        <Label Foreground="White" Name="TurnLabel" Content="Turn:" HorizontalAlignment="Left" Margin="220,159,0,0" VerticalAlignment="Top" Width="143" Height="34" FontWeight="Bold" FontSize="16"/>
+
+        <Button Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="HitButton_Click"/>
+        <Button Name="DoubleDownButton" Content="Double Down" HorizontalAlignment="Left" Margin="388,10,0,0" VerticalAlignment="Top" Width="93" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="DoubleDownButton_Click"/>
+        <Button Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="315,10,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="StandButton_Click"/>
+        <Button Name="SplitButton" Content="Split" HorizontalAlignment="Left" Margin="487,10,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="False" Background="White" Foreground="Black" Visibility="Hidden" Click="SplitButton_Click"/>
+        <Button x:Name="D1Button" Content="$1" HorizontalAlignment="Left" Margin="276,10,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
+        <Button x:Name="D5Button" Content="$5" HorizontalAlignment="Left" Margin="366,10,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
+        <Button x:Name="D10Button" Content="$10" HorizontalAlignment="Left" Margin="456,10,0,0" VerticalAlignment="Top" Width="68" Height="34" IsEnabled="True" Background="White" Foreground="Black" Click="BetButton_Click"/>
+
+        <Label Foreground="White" x:Name="Player1Busted" Content="Busted" HorizontalAlignment="Left" Width="46" Margin="204,237,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player2Busted" Content="Busted" HorizontalAlignment="Left" Width="46" Margin="292,289,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player3Busted" Content="Busted" HorizontalAlignment="Left" Width="46" Margin="392,289,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player4Busted" Content="Busted" HorizontalAlignment="Left" Width="46" Margin="496,284,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player5Busted" Content="Busted" HorizontalAlignment="Left" Width="46" Margin="586,237,0,0" VerticalAlignment="Top" />
+
+        <Label Foreground="White" x:Name="Player1Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="229,211,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player2Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="320,263,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player3Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="418,263,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player4Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="519,260,0,0" VerticalAlignment="Top" />
+        <Label Foreground="White" x:Name="Player5Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="603,211,0,0" VerticalAlignment="Top" />
 
     </Grid>
 </UserControl>

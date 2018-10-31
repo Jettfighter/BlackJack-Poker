@@ -12,7 +12,7 @@ namespace CardGameLib.Controllers
         public static int ConvertValue(Card card)
         {
             int total = 0;
-            if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J')
+            if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J'||card.Value == ':')
             {
                 total = 10;
             }
@@ -67,6 +67,33 @@ namespace CardGameLib.Controllers
                 player.Hand.Add(blackjack.Deck.GetCard());
             }
             house.Hand.Add(blackjack.Deck.GetCard());
+        }
+
+        public static int GetTotal(string playerName, bool secondHandCheck)
+        {
+            BlackjackPlayer player = blackjack.GetPlayer(playerName);
+            
+
+            int total = 0;
+            bool hasAce = false;
+
+            foreach (Card card in secondHandCheck ? player.SecondHand : player.Hand)
+            {
+                if (card.Value == 'A')
+                {
+                    hasAce = true;
+                }
+                total += ConvertValue(card);
+            }
+
+            if (total > 21 && hasAce)
+            {
+                total -= 10;
+            }
+
+            
+
+            return total;
         }
 
         public static bool IsBusted(string playerName, bool secondHandCheck)
