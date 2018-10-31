@@ -152,12 +152,21 @@ namespace CardGames.CardGames_UCs.GameModesUC
             extention += card.Value;
             extention += card.Suit[0];
             Console.WriteLine(extention);
-
+            string currentDir = Environment.CurrentDirectory;
+            List<char> fixedPath = currentDir.ToList();
+            fixedPath.RemoveRange(currentDir.Count() - 9, 9);
+            string path = "";
+            foreach (char c in fixedPath)
+            {
+                path += c;
+            }
+            path += "Resources\\" + extention + ".png";
+            Console.WriteLine(path);
             BitmapImage b = new BitmapImage();
             b.BeginInit();
-            b.UriSource = new Uri($"C:\\Source\\BlackJack-Poker\\CardGames\\CardGames\\Resources\\{extention}.png", UriKind.RelativeOrAbsolute);
+            b.UriSource = new Uri(path, UriKind.RelativeOrAbsolute);
             b.EndInit();
-
+            Console.WriteLine(b.UriSource);
             pic.Source = b;
             pic.Height = 80;
 
