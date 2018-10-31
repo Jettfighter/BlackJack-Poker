@@ -46,7 +46,7 @@ namespace CardGames.CardGames_UCs.GameModesUC
             PreparePlayerElements();
             ResetPlayers();
 
-            ConvertToPicture(new Card('2', "Hearts"));
+            //ConvertToPicture(new Card('2', "Hearts"));
             playerTurn = NumPlayers - 1;
             TurnLabel.Content = $"Turn: {GetCurrentPlayerName()}";
         }
