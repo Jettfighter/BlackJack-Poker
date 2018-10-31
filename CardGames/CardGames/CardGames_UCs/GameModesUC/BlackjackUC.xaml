@@ -64,6 +64,8 @@
         <Label Foreground="White" x:Name="Player3Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="418,263,0,0" VerticalAlignment="Top" />
         <Label Foreground="White" x:Name="Player4Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="519,260,0,0" VerticalAlignment="Top" />
         <Label Foreground="White" x:Name="Player5Total" Content=":21" HorizontalAlignment="Left" Width="26" Margin="603,211,0,0" VerticalAlignment="Top" />
+        
+        <Label Name="DealerTotal" Foreground="White" Content=":21" HorizontalAlignment="Left" FontSize="28" FontFamily="/CardGames;component/Resources/roland-huse-design_poker-in-october-demo/#Poker In October Demo" Margin="468,60,0,0" VerticalAlignment="Top" Width="43"/>
 
     </Grid>
 </UserControl>

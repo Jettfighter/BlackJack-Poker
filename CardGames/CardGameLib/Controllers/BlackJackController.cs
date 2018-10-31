@@ -12,7 +12,7 @@ namespace CardGameLib.Controllers
         public static int ConvertValue(Card card)
         {
             int total = 0;
-            if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J'||card.Value == ':')
+            if (card.Value == 'K' || card.Value == 'Q' || card.Value == 'J'||card.Value == 'X')
             {
                 total = 10;
             }
@@ -28,7 +28,7 @@ namespace CardGameLib.Controllers
         }
 
         public static Blackjack blackjack;
-        private static BlackjackPlayer house = new BlackjackPlayer();
+        public static BlackjackPlayer house = new BlackjackPlayer();
         private static int round = 0;
 
         public static BlackjackPlayer[] ConvertPlayerToBlackjackPlayer(string[] playerNames)
@@ -39,7 +39,7 @@ namespace CardGameLib.Controllers
                 players[i] = new BlackjackPlayer()
                 {
                     Name = playerNames[i],
-                    Bank = 100,
+                    Bank = 20,
                     BoughtIn = false,
                     DoubledDown = false,
                     SecondHandInitiated = false
@@ -69,10 +69,10 @@ namespace CardGameLib.Controllers
             house.Hand.Add(blackjack.Deck.GetCard());
         }
 
-        public static int GetTotal(string playerName, bool secondHandCheck)
+        public static int GetTotal(string playerName, bool secondHandCheck, bool isHouse = false)
         {
-            BlackjackPlayer player = blackjack.GetPlayer(playerName);
-            
+            BlackjackPlayer player = isHouse ? house : blackjack.GetPlayer(playerName);
+
 
             int total = 0;
             bool hasAce = false;
@@ -96,9 +96,9 @@ namespace CardGameLib.Controllers
             return total;
         }
 
-        public static bool IsBusted(string playerName, bool secondHandCheck)
+        public static bool IsBusted(string playerName, bool secondHandCheck,bool isHouse = false)
         {
-            BlackjackPlayer player = blackjack.GetPlayer(playerName);
+            BlackjackPlayer player = isHouse? house: blackjack.GetPlayer(playerName);
             bool isBusted = false;
 
             int total = 0;
@@ -151,9 +151,9 @@ namespace CardGameLib.Controllers
             return isTwentyOne;
         }
         
-        public static bool CheckNatural(string player)
+        public static bool CheckNatural(string player, bool isHouse = false)
         {
-            Player p = blackjack.GetPlayer(player);
+            BlackjackPlayer p = isHouse ? house : blackjack.GetPlayer(player);
             List<Card> hand = p.Hand;
             bool isNatural = false;
 
@@ -277,11 +277,46 @@ namespace CardGameLib.Controllers
             {
 
                 BlackjackPlayer player = blackjack.GetPlayer(name);
+                player.Bank -= player.FirstBet;
                 player.FirstBet *= 2;
                 player.DoubledDown = true;
                 player.Hand.Add(blackjack.Deck.GetCard());
             }
             return successful;
+        }
+
+        public static int PayoutForBankOnAPlayer(string playerName)
+        {
+            BlackjackPlayer player = blackjack.GetPlayer(playerName);
+            if (!IsBusted(playerName, false) && player.Hand.Count>=5)//5 card charlie
+            {
+                player.Bank += player.FirstBet * 4;
+            }
+            else if(CheckNatural(playerName)&&!CheckNatural("",true))//blackjack for player and not dealer
+            {
+                player.Bank += player.FirstBet * 3;
+            }
+            else if(!IsBusted(playerName, false)&& IsBusted("", false,true))//dealer busts and player does not
+            {
+                player.Bank += player.FirstBet * 2;
+            }
+            else if(IsBusted(playerName, false) && IsBusted("", false, true))//both dealer and player bust
+            {
+                player.Bank += player.FirstBet;
+            }
+            else if (IsBusted(playerName, false) && !IsBusted("", false, true))//player busts and dealer does not
+            {
+                //nothing happens but needed to be checked
+            }
+            else if(GetTotal(playerName,false)> GetTotal("", false,true))//player gets a higher score than dealer
+            {
+                player.Bank += player.FirstBet*2;
+            }
+            else if(GetTotal(playerName, false) == GetTotal("", false, true))//player and dealer get the same score
+            {
+                player.Bank += player.FirstBet;
+            }
+            return player.Bank;
         }
     }
 }

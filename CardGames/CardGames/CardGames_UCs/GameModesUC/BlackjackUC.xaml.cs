@@ -56,6 +56,7 @@ namespace CardGames.CardGames_UCs.GameModesUC
             TurnLabel.Content = $"Turn: {GetCurrentPlayerName()}";
             //UpdateHands();
             AddBackOfCardsToAllPlayers();
+            DealerTotal.Content = "";
         }
 
         private void ResetPlayers()
@@ -102,10 +103,8 @@ namespace CardGames.CardGames_UCs.GameModesUC
             {
                 DoubleDownButton.Visibility = Visibility.Visible;
             }
-            if (BlackJackController.CanSplitPairs(playerName))
-            {
-                SplitButton.Visibility = Visibility.Visible;
-            }
+            SplitButton.Visibility = Visibility.Hidden;
+            
 
             HitButton.IsEnabled = true;
             DoubleDownButton.IsEnabled = true;
@@ -116,7 +115,7 @@ namespace CardGames.CardGames_UCs.GameModesUC
             D5Button.Visibility = Visibility.Hidden;
             D10Button.Visibility = Visibility.Hidden;
             DisplayCurrentHand();
-            PlayerTotalDisplays[playerTurn].Content = $":{BlackJackController.GetTotal(GetCurrentPlayerName(),false)}";
+            PlayerTotalDisplays[playerTurn].Content = $":{BlackJackController.GetTotal(GetCurrentPlayerName(), false)}";
         }
 
         private void PreparePlayerElements()
@@ -202,20 +201,42 @@ namespace CardGames.CardGames_UCs.GameModesUC
             for (int i = 0; i < NumPlayers; i++)
             {
                 PlayerHandDisplays[i].Children.Clear();
-                
+
                 string name = PlayerNameDisplays[i].Content.ToString();
                 int total = BlackJackController.GetTotal(name, false);
                 PlayerTotalDisplays[i].Content = $":{total}";
-                if(BlackJackController.IsBusted(name,false))
+                if (BlackJackController.IsBusted(name, false))
                 {
                     PlayerBustDisplays[i].Content = "Busted";
                 }
                 var hand = BlackJackController.blackjack.GetPlayer(PlayerNameDisplays[i].Content.ToString()).Hand;
+                PlayerHandDisplays[i].Children.Clear();
+                PlayerContinuedHandDisplays[i].Children.Clear();
+
+                int count = 0;
                 foreach (var card in hand)
                 {
+                    count++;
                     var pic = ConvertToPicture(card);
-                    PlayerHandDisplays[i].Children.Add(pic);
+                    if (count <= 3)
+                    {
+
+                        PlayerHandDisplays[i].Children.Add(pic);
+                    }
+                    else
+                    {
+                        PlayerContinuedHandDisplays[i].Children.Add(pic);
+
+                    }
                 }
+
+            }
+            var dealerHand = BlackJackController.house.Hand;
+            DealerHand.Children.Clear();
+            foreach (var card in dealerHand)
+            {
+                var pic = ConvertToPicture(card);
+                DealerHand.Children.Add(pic);
             }
         }
 
@@ -224,14 +245,8 @@ namespace CardGames.CardGames_UCs.GameModesUC
             Image pic = new Image();
 
             string extention = "";
-            if (card.Value == ':')
-            {
-                extention += "10";
-            }
-            else
-            {
-                extention += card.Value;
-            }
+            extention += card.Value;
+
             extention += card.Suit[0];
             Console.WriteLine(extention);
             string currentDir = Environment.CurrentDirectory;
@@ -270,7 +285,9 @@ namespace CardGames.CardGames_UCs.GameModesUC
                 SplitButton.Visibility = Visibility.Hidden;
 
                 TurnLabel.Content = "Turn:";
+                BlackJackController.HouseTurn();
                 UpdateHands();
+                EndGame();
             }
             else
             {
@@ -299,8 +316,13 @@ namespace CardGames.CardGames_UCs.GameModesUC
         {
             string playerName = GetCurrentPlayerName();
             BlackJackController.DoublingDown(playerName);
+            PlayerBankDisplays[playerTurn].Content = $"${BlackJackController.blackjack.GetPlayer(playerName).Bank}";
             StandButton_Click(sender, e);
-            HideCurrentHand(true);
+            if (playerTurn >= 0)
+            {
+                HideCurrentHand(true);
+
+            }
         }
 
         private void HitButton_Click(object sender, RoutedEventArgs e)
@@ -343,6 +365,19 @@ namespace CardGames.CardGames_UCs.GameModesUC
 
                 }
             }
+        }
+
+        private void EndGame()
+        {
+            int dealerTotal = BlackJackController.GetTotal("", false, true);
+            DealerTotal.Content = $":{dealerTotal}";
+            for (int i = 0; i < NumPlayers; i++)
+            {
+                string name = PlayerNameDisplays[i].Content.ToString();
+                int bank = BlackJackController.PayoutForBankOnAPlayer(name);
+                PlayerBankDisplays[i].Content = $"${bank}";
+            }
+
         }
 
         private void HideCurrentHand(bool IsDoubleDown)
